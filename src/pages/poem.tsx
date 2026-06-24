@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Copy, Check, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 import { poems } from "@/data/poems";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function PoemPage({ params }: { params: { id: string } }) {
@@ -11,6 +11,10 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     const { toast } = useToast();
     const [copied, setCopied] = useState(false);
     const [selected, setSelected] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+    }, [params.id]);
 
     if (!poem) {
         return (
@@ -42,7 +46,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     };
 
     return (
-        <div className="min-h-[100dvh] w-full bg-background">
+        <div className="min-h-[100dvh] w-full">
             <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 md:py-20">
                     {/* Back button */}
                     <motion.button

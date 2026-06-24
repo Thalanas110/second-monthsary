@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Home } from "./components/home";
 import NotFound from "./pages/not-found";
 import PoemPage from "./pages/poem";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const queryClient = new QueryClient();
 const versaillesImg = "/versailles style.png";
@@ -34,12 +34,25 @@ function AmbientBackground() {
 }
 
 function Router() {
+  const [location] = useLocation();
+
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/poem/:id" component={PoemPage} />
-      <Route component={NotFound} />
-    </Switch>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        style={{ position: "relative", zIndex: 1 }}
+      >
+        <Switch location={location}>
+          <Route path="/" component={Home} />
+          <Route path="/poem/:id" component={PoemPage} />
+          <Route component={NotFound} />
+        </Switch>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

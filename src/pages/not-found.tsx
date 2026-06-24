@@ -45,7 +45,7 @@ export default function NotFound() {
         className="relative z-10 text-center px-6 max-w-xl mx-auto"
       >
         {/* Eyebrow */}
-        <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-6">
+        <p className="font-medium tracking-[0.25em] uppercase text-xs md:text-sm mb-6" style={{ color: '#d9c9a8' }}>
           — Lost in the Gardens —
         </p>
 
@@ -53,7 +53,7 @@ export default function NotFound() {
         <h1
           className="font-serif text-[7rem] md:text-[11rem] leading-none text-transparent select-none mb-2"
           style={{
-            WebkitTextStroke: "1.5px hsl(var(--primary) / 0.35)",
+            WebkitTextStroke: "1.5px rgba(217, 201, 168, 0.7)",
           }}
         >
           404
@@ -61,9 +61,9 @@ export default function NotFound() {
 
         {/* Divider ornament */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <span className="h-px w-16 bg-primary/30" />
-          <Heart className="w-4 h-4 text-primary/50 fill-primary/30" />
-          <span className="h-px w-16 bg-primary/30" />
+          <span className="h-px w-16" style={{ backgroundColor: 'rgba(217, 201, 168, 0.3)' }} />
+          <Heart className="w-4 h-4" style={{ color: 'rgba(217, 201, 168, 0.5)', fill: 'rgba(217, 201, 168, 0.3)' }} />
+          <span className="h-px w-16" style={{ backgroundColor: 'rgba(217, 201, 168, 0.3)' }} />
         </div>
 
         {/* Description */}
@@ -79,7 +79,8 @@ export default function NotFound() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => navigate("/")}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium shadow-md hover:opacity-90 transition-opacity text-sm"
+          className="inline-flex items-center gap-2 px-8 py-3 text-primary-foreground rounded-xl font-medium shadow-md hover:opacity-90 transition-opacity text-sm"
+          style={{ backgroundColor: '#d9c9a8', color: '#1a1a1a' }}
         >
           <Heart className="w-4 h-4" />
           Return to the Salon

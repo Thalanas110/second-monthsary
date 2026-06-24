@@ -197,7 +197,7 @@ export function Home() {
                                 className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground"
                             >
                                 <Languages className="w-4 h-4 text-muted-foreground" />
-                                <span>{language === "english" ? "Bikolano" : "English"}</span>
+                                <span>{language === "bikol" ? "Bikolano" : "English"}</span>
                             </button>
                         </div>
                     </div>
@@ -243,7 +243,7 @@ export function Home() {
                                         className="flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground self-start"
                                     >
                                         <Languages className="w-4 h-4 text-muted-foreground" />
-                                        <span>{language === "english" ? "Bikolano" : "English"}</span>
+                                        <span>{language === "bikol" ? "Bikolano" : "English"}</span>
                                     </button>
                                 </div>
                             </motion.div>
@@ -298,7 +298,7 @@ export function Home() {
                                                 }`}
                                         >
                                             <Languages className="w-4 h-4" />
-                                            <span className="font-medium">{language === "english" ? "Show Original" : "English Translation"}</span>
+                                            <span className="font-medium">{language === "bikol" ? "Bikolano" : "English"}</span>
                                         </button>
                                     </div>
                                 )}

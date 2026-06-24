@@ -73,7 +73,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                                 className="flex items-center gap-2 px-4 py-2 rounded-xl border border-input text-muted-foreground hover:text-foreground hover:bg-secondary transition-all text-sm font-medium"
                             >
                                 <Languages className="w-4 h-4" />
-                                <span>{language === "english" ? "Bikolano" : "English"}</span>
+                                <span>{language === "bikol" ? "Bikolano" : "English"}</span>
                             </motion.button>
                         )}
                     </div>

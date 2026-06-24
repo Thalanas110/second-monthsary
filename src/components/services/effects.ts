@@ -29,7 +29,7 @@ export function useScrolledPast(threshold = 100): boolean {
  */
 export function useInView<T extends Element>(
     options: IntersectionObserverInit = { threshold: 0.1 }
-): [RefObject<T>, boolean] {
+): [RefObject<T | null>, boolean] {
     const ref = useRef<T>(null);
     const [inView, setInView] = useState(false);
 

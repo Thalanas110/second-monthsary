@@ -14,8 +14,10 @@ export function useHome() {
         return poems.filter(poem => {
             const matchesSearch =
                 poem.title.toLowerCase().includes(search.toLowerCase()) ||
+                (poem.englishTitle && poem.englishTitle.toLowerCase().includes(search.toLowerCase())) ||
                 poem.poet.toLowerCase().includes(search.toLowerCase()) ||
-                poem.text.toLowerCase().includes(search.toLowerCase());
+                poem.text.toLowerCase().includes(search.toLowerCase()) ||
+                (poem.englishText && poem.englishText.toLowerCase().includes(search.toLowerCase()));
 
             const matchesMood = selectedMood === "All" || poem.moods.includes(selectedMood as Mood);
 

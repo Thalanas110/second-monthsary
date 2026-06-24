@@ -1,9 +1,14 @@
 import { Poem } from "@/data/poems";
 import { motion } from "framer-motion";
-import { useInView, useScrolledPast } from "./services/effects";
+import { useInView, useScrolledPast, useLanguage } from "./services/effects";
 
 export function PoemCard({ poem, onClick }: { poem: Poem; onClick: () => void }) {
-    const preview = poem.text.split("\n").filter(l => l.trim().length > 0).slice(0, 3).join("\n");
+    const [language] = useLanguage();
+    const isEnglish = language === "english";
+    const textToDisplay = isEnglish && poem.englishText ? poem.englishText : poem.text;
+    const titleToDisplay = isEnglish && poem.englishTitle ? poem.englishTitle : poem.title;
+    
+    const preview = textToDisplay.split("\n").filter(l => l.trim().length > 0).slice(0, 3).join("\n");
     const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.1 });
     const scrolledPast = useScrolledPast(300);
 
@@ -21,7 +26,7 @@ export function PoemCard({ poem, onClick }: { poem: Poem; onClick: () => void })
             onClick={onClick}
         >
             <div>
-                <h3 className="text-xl md:text-2xl font-serif text-primary mb-2 line-clamp-2">{poem.title}</h3>
+                <h3 className="text-xl md:text-2xl font-serif text-primary mb-2 line-clamp-2">{titleToDisplay}</h3>
                 <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6">{poem.poet}</p>
                 <div className="relative">
                     <div className="absolute -left-2 -top-2 text-4xl text-primary/10 font-serif">"</div>

@@ -59,6 +59,7 @@ export default function NotFound() {
           404
         </h1>
 
+
         {/* Divider ornament */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <span className="h-px w-16" style={{ backgroundColor: 'rgba(217, 201, 168, 0.3)' }} />

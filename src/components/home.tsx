@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, Filter, ChevronDown, Languages, Menu, X } from "lucide-react";
 import { useHome } from "./services/home";
@@ -21,6 +21,21 @@ export function Home() {
     const [, navigate] = useLocation();
     const [language, setLanguage] = useLanguage();
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+    const navbarRef = useRef<HTMLDivElement>(null);
+
+    // Close mobile filters when clicking outside the navbar
+    useEffect(() => {
+        if (!mobileFiltersOpen) return;
+
+        const handleClickOutside = (e: MouseEvent) => {
+            if (navbarRef.current && !navbarRef.current.contains(e.target as Node)) {
+                setMobileFiltersOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [mobileFiltersOpen]);
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
@@ -101,6 +116,7 @@ export function Home() {
                     animate={showFilters ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     style={{ pointerEvents: showFilters ? "auto" : "none" }}
+                    ref={navbarRef}
                     className={`bg-card/80 border rounded-2xl mb-12 sticky top-4 z-30 overflow-hidden ${
                         showFilters
                             ? "backdrop-blur-md border-card-border shadow-sm"
@@ -207,10 +223,7 @@ export function Home() {
                                         {moods.map(mood => (
                                             <button
                                                 key={mood}
-                                                onClick={() => {
-                                                    setSelectedMood(mood);
-                                                    setMobileFiltersOpen(false);
-                                                }}
+                                                onClick={() => setSelectedMood(mood)}
                                                 className={`whitespace-nowrap px-4 py-2 rounded-full text-sm transition-all ${selectedMood === mood
                                                     ? "bg-primary text-primary-foreground shadow-sm"
                                                     : "bg-background text-foreground/70 hover:bg-secondary hover:text-foreground border border-input"
@@ -226,10 +239,7 @@ export function Home() {
 
                                     {/* Language toggle */}
                                     <button
-                                        onClick={() => {
-                                            setLanguage(language === "bikol" ? "english" : "bikol");
-                                            setMobileFiltersOpen(false);
-                                        }}
+                                        onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
                                         className="flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground self-start"
                                     >
                                         <Languages className="w-4 h-4 text-muted-foreground" />
@@ -274,7 +284,9 @@ export function Home() {
                             </div>
                             <div className="relative z-10 text-center max-w-3xl mx-auto">
                                 <h2 className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-8">Your Selected Verse</h2>
-                                <h3 className="text-3xl md:text-5xl font-serif text-foreground mb-4">{featuredPoem.title}</h3>
+                                <h3 className="text-3xl md:text-5xl font-serif text-foreground mb-4">
+                                    {language === "english" && featuredPoem.englishTitle ? featuredPoem.englishTitle : featuredPoem.title}
+                                </h3>
                                 <p className="text-lg text-muted-foreground uppercase tracking-widest mb-8">{featuredPoem.poet}</p>
                                 {featuredPoem.englishText && (
                                     <div className="flex justify-center mb-12">

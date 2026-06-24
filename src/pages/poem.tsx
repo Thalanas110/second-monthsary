@@ -90,7 +90,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                             </span>
                         )}
                         <h1 className="text-4xl md:text-6xl font-serif text-primary mb-4 leading-tight">
-                            {poem.title}
+                            {language === "english" && poem.englishTitle ? poem.englishTitle : poem.title}
                         </h1>
                         <p className="text-muted-foreground uppercase tracking-[0.2em] text-sm mb-3">
                             {poem.poet}

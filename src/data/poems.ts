@@ -3,6 +3,7 @@ export type Mood = "Longing" | "Devotion" | "Passion" | "Joy" | "Farewell" | "Re
 export interface Poem {
   id: string;
   title: string;
+  englishTitle?: string;
   poet: string;
   text: string;
   englishText?: string;
@@ -19,8 +20,9 @@ export const poems: Poem[] = [
   {
     id: "1",
     title: "Tesis Pasiring Satoya",
+    englishTitle: "Thesis To Us",
     poet: "Adriaan M. Dimate | BSCS 4-A",
-    moods: ["Devotion", "Joy"],
+    moods: ["Devotion", "Joy", "Reflection"],
     year: "2026",
     text: `Taon nag-abot na may dalang batbat,
 Sa tahaw kan bangging pinag-pupuyat,
@@ -223,39 +225,219 @@ I see the road that led to you.`
   },
   {
     id: "2",
-    title: "Tonight I Can Write The Saddest Lines",
-    poet: "Pablo Neruda",
-    moods: ["Farewell", "Longing", "Reflection"],
-    year: "1924",
-    text: `[Bikolano translation for Tonight I Can Write The Saddest Lines goes here]`,
-    englishText: `Tonight I can write the saddest lines.
+    title: "Maski an Signal Magpalya",
+    englishTitle: "Even When the Signal Fails",
+    poet: "Adriaan M. Dimate",
+    moods: ["Devotion", "Longing", "Reflection"],
+    year: "2026",
+    text: `Igwang mga banggi na pano nin uran,
+Mensaheng nalunod sa may kadagatan,
+An langit matoninong garong gapo man,
+Mayong kasigurohan sa may pintuan.
 
-Write, for example, 'The night is shattered
-and the blue stars shiver in the distance.'
+Mga account nawara sa diklom bigla,
+Garo harong na binayaan sa baha,
+Mga ngaran nawara sa dating sadya,
+Mga hapot sana an natada ninda.
 
-The night wind revolves in the sky and sings.
+Paagi kan kinaban kitang purbaran,
+Bako sana sa gerang may kakusugan,
+Minsan sa mga simbag na nawawaran,
+Kahadit sa irarom kan katawuhan.
 
-Tonight I can write the saddest lines.
-I loved her, and sometimes she loved me too.
+Sarong notipikasyon biglang mapara,
+Sarong orolay nawaran nin istorya,
+Ngonian bangging pano nin mga pag-ogma,
+Dangan masunod silensyo na sobra na.
 
-Through nights like this one I held her in my arms.
-I kissed her again and again under the endless sky.
+Aldaw na takot abot dai inagda,
+Sa sakong isipan ini matukaw na,
+Istorya sa anino pinaggibo na,
+Naghahanap simbag na dai makua.
 
-She loved me, sometimes I loved her too.
-How could one not have loved her great still eyes.
+Dalan tang linakwan di pirming deretso,
+Buhay mas pili an salog bakong gapo,
+Pigabago mapa ta maski paano,
+Nawalat magbalay sa daing siguro.
 
-Tonight I can write the saddest lines.
-To think that I do not have her. To feel that I have lost her.
+Alagad kada bagyo may katukduan,
+Kusog kan gamot sa tios nagtubo man,
+Mga kahoy nag-agi nin kabagyuhan,
+Minabati sa aga tapos kan uran.
 
-To hear the immense night, still more immense without her.
-And the verse falls to the soul like dew to the pasture.
+Aram ko pagkamoot bakong sirungan,
+Na pinatindog sa silnag kan langitan,
+Ini sarong lampara na malaad man,
+Kun an daguldol yanig sa katahawan.
 
-What does it matter that my love could not keep her.
-The night is shattered and she is not with me.`
+Dagat dai nakiherak sa barko man,
+Paros dai minaluya ning suguan,
+Marinero padagos sa paglayagan,
+Tiwala sa kompas sa mga kamotan.
+
+Kaya ako nagtener dai pinungan,
+Sa kada lanob nagtindog sa harapan,
+Bako ta dalan nagin mas magian man,
+Ta aram nin puso ko an paduduman.
+
+Kinaban nag-apon rayo sa agihan,
+Pinalaba horizonte sa puluhan,
+Pero an rayo di nagin kakulungan,
+Nagtukdo lang kun pano mangibabawan.
+
+Kun an signal raot accounts pinara man,
+Kun an kada channel garo sarado man,
+Naghanap kita dalan sa toninongan,
+Garo salog hanap bulos kan tubigan.
+
+May mga bagyo na di ta pinaghagad,
+Mga laban dai plano nining palad,
+Pero padagos lang an satong paglakad,
+Dai binitawan mga kamot nanggad.
+
+Bukid sa tahaw kan satong puturo man,
+Panganuron mahibog na hilingon man,
+Pero nagtutubod sa likod nin dalan,
+Naghahalat an agang para sato man.
+
+Mga banggi may takot rason nawara,
+An diklom mas dakula sa banaag na,
+Pero kada saldang isarong sumpa na,
+Pinakahalabang banggi maagi pa.
+
+Ta ano man gugma kun di pagtiyaga,
+Silensyong pili binago kada aga,
+Di lang sasabihon na oras maogma,
+Kundi binubuhay kun ginhawa wara.
+
+Dai ko pangako langit na perpekto,
+O dalan mayong luha asin peligro,
+Kinaban pinorma kan sakit totoo,
+Maski mga salog ukit uran mismo.
+
+Pero ini sumpa ko daing duda na,
+Kun an mga paros magpuno bangon pa,
+Dai mo ini harapon solo sana,
+Ni labanan bagyo nin matang pagal na.
+
+Kun alon maglangkaw lampas sa sokulon,
+Kun aram tang tanda malabo hilingon,
+Ako matetener digdi sa baybayon,
+May kapot na ilaw dalang pasiringon.
+
+Asin kun kinaban ribok minabangon,
+O warakon plano sa dagat nag-alon,
+Kada pagtaob iutro sasabihon:
+
+          Ako matener.
+          Matener kaibahon.`,
+    englishText: `There were evenings swallowed whole by rain,
+When messages drowned before reaching shore.
+The sky held silence like a heavy stone,
+And certainty knocked at no one's door.
+
+Accounts vanished into sudden darkness,
+Like houses abandoned after a flood.
+Names disappeared from familiar places,
+Leaving only questions where they once stood.
+
+The world has strange ways of testing people,
+Not always through battles grand and loud.
+Sometimes it comes through missing replies,
+And worries hidden beneath a crowd.
+
+A single notification can vanish,
+A conversation can lose its thread.
+One moment laughter fills the evening,
+The next is silence hanging overhead.
+
+There were days when fear arrived uninvited,
+Taking a seat beside my mind.
+Building stories from scattered shadows,
+Searching for answers it could not find.
+
+The roads we walk are rarely level,
+Life prefers rivers over stone.
+It bends our maps without permission,
+And leaves us crossing depths unknown.
+
+Yet every storm revealed a lesson:
+The strongest roots grow under strain.
+The trees that weather countless tempests
+Still greet the morning after rain.
+
+I learned that love is not a shelter
+Built only for fair and gentle skies.
+It is a lamp kept burning softly
+When thunder shakes the midnight skies.
+
+The sea does not ask ships for mercy.
+The wind does not soften its command.
+Yet sailors continue steering forward,
+Trusting the compass in their hand.
+
+And so I stayed through every setback,
+Through every wall that rose ahead.
+Not because the road became easier,
+But because my heart knew where it led.
+
+The world threw distance across our pathway,
+Stretching horizons from end to end.
+Yet distance failed to become a prison;
+It merely taught us how to transcend.
+
+When signals broke and accounts were taken,
+When every channel seemed to close,
+We searched for pathways through the silence,
+Like rivers finding where water flows.
+
+There were storms we never asked to weather,
+Battles neither of us had planned.
+Yet somehow we kept moving onward,
+Refusing to loosen our joined hands.
+
+The mountains stood between our tomorrows,
+Wrapped in clouds too thick to see.
+Still I believed beyond the ridges
+Waited the future meant to be.
+
+Some nights carried more fear than reason.
+The darkness seemed larger than the dawn.
+Yet every sunrise proved a promise:
+The longest night still moves along.
+
+For what is love if not persistence?
+A quiet choice renewed each day.
+Not merely spoken in bright moments,
+But lived when comfort fades away.
+
+I cannot promise skies unbroken,
+Or roads untouched by grief and strain.
+The earth itself is shaped by hardship;
+Even rivers are carved by rain.
+
+But I can promise this with certainty:
+When stronger winds begin to rise,
+You will not face them standing alone,
+Nor battle storms with weary eyes.
+
+If tides should climb beyond their limits,
+If all familiar landmarks blur,
+I will remain beside the shoreline,
+Keeping a light that points to her.
+
+And should the world grow loud with chaos,
+Or scatter our plans across the sea,
+Let every wave repeat one answer:
+
+          I stay.
+          And I will stay.
+          With thee.`
   },
   {
     id: "3",
-    title: "How Do I Love Thee? (Sonnet 43)",
+    title: "[Bikolano title for Sonnet 43 goes here]",
+    englishTitle: "How Do I Love Thee? (Sonnet 43)",
     poet: "Elizabeth Barrett Browning",
     moods: ["Devotion", "Passion"],
     year: "1850",
@@ -277,7 +459,8 @@ I shall but love thee better after death.`
   },
   {
     id: "4",
-    title: "She Walks in Beauty",
+    title: "[Bikolano title for She Walks in Beauty goes here]",
+    englishTitle: "She Walks in Beauty",
     poet: "Lord Byron",
     moods: ["Devotion", "Reflection"],
     year: "1815",
@@ -305,7 +488,8 @@ A heart whose love is innocent!`
   },
   {
     id: "5",
-    title: "Bright Star",
+    title: "[Bikolano title for Bright Star goes here]",
+    englishTitle: "Bright Star",
     poet: "John Keats",
     moods: ["Longing", "Devotion"],
     year: "1819",
@@ -327,7 +511,8 @@ And so live ever—or else swoon to death.`
   },
   {
     id: "6",
-    title: "He Wishes for the Cloths of Heaven",
+    title: "[Bikolano title for He Wishes for the Cloths of Heaven goes here]",
+    englishTitle: "He Wishes for the Cloths of Heaven",
     poet: "W. B. Yeats",
     moods: ["Devotion", "Longing"],
     year: "1899",
@@ -343,7 +528,8 @@ Tread softly because you tread on my dreams.`
   },
   {
     id: "7",
-    title: "Love's Philosophy",
+    title: "[Bikolano title for Love's Philosophy goes here]",
+    englishTitle: "Love's Philosophy",
     poet: "Percy Bysshe Shelley",
     moods: ["Passion", "Longing"],
     year: "1819",
@@ -368,7 +554,8 @@ What is all this sweet work worth
   },
   {
     id: "8",
-    title: "A Glimpse",
+    title: "[Bikolano title for A Glimpse goes here]",
+    englishTitle: "A Glimpse",
     poet: "Walt Whitman",
     moods: ["Joy", "Reflection"],
     year: "1860",

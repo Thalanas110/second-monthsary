@@ -97,7 +97,12 @@ export function Home() {
                     animate={showFilters ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     style={{ pointerEvents: showFilters ? "auto" : "none" }}
-                    className="bg-card/80 backdrop-blur-md border border-card-border rounded-2xl shadow-sm mb-12 sticky top-4 z-30 overflow-hidden"
+                    className={`bg-card/80 border rounded-2xl mb-12 sticky top-4 z-30 overflow-hidden ${
+                        showFilters
+                            ? "backdrop-blur-md border-card-border shadow-sm"
+                            : "backdrop-blur-none border-transparent shadow-none"
+                    }`}
+
                 >
                     {/* Top row: search + mobile toggle (desktop: full bar) */}
                     <div className="flex items-center gap-3 p-3 md:p-6 md:gap-4">

@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, Copy, Check, X, Filter } from "lucide-react";
+import { Search, Heart, Filter } from "lucide-react";
 import { useHome } from "./services/home";
 import { useScrolledPast } from "./services/effects";
 import { PoemCard } from "./poem-card";
+import { useLocation } from "wouter";
 
 const versaillesImg = "/versailles style.png";
 
@@ -10,14 +11,13 @@ export function Home() {
     const {
         search, setSearch,
         selectedMood, setSelectedMood,
-        activePoem, setActivePoem,
         featuredPoem,
-        copied,
         moods,
         filteredPoems,
-        handleCopy,
         handleSelect,
     } = useHome();
+
+    const [, navigate] = useLocation();
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
@@ -97,13 +97,13 @@ export function Home() {
                 {/* Gallery */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <AnimatePresence>
-                        {filteredPoems.map((poem, i) => (
+                        {filteredPoems.map((poem) => (
                             <motion.div
                                 key={poem.id}
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <PoemCard poem={poem} onClick={() => setActivePoem(poem)} />
+                                <PoemCard poem={poem} onClick={() => navigate(`/poem/${poem.id}`)} />
                             </motion.div>
                         ))}
                         {filteredPoems.length === 0 && (
@@ -138,67 +138,7 @@ export function Home() {
                 </AnimatePresence>
             </main>
 
-            {/* Modal */}
-            <AnimatePresence>
-                {activePoem && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
-                            onClick={() => setActivePoem(null)}
-                        />
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="relative w-full max-w-2xl max-h-[90vh] bg-card border border-card-border rounded-2xl shadow-2xl overflow-hidden flex flex-col"
-                        >
-                            <div className="flex justify-between items-center p-6 border-b border-border bg-card/50 backdrop-blur z-10 sticky top-0">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full font-medium">
-                                        {activePoem.year || "Classic"}
-                                    </span>
-                                </div>
-                                <button
-                                    onClick={() => setActivePoem(null)}
-                                    className="p-2 hover:bg-muted rounded-full transition-colors"
-                                >
-                                    <X className="w-5 h-5 text-muted-foreground" />
-                                </button>
-                            </div>
-
-                            <div className="p-8 md:p-12 overflow-y-auto flex-1">
-                                <h2 className="text-3xl md:text-4xl font-serif text-primary mb-2">{activePoem.title}</h2>
-                                <p className="text-muted-foreground tracking-widest uppercase text-sm mb-10">{activePoem.poet}</p>
-
-                                <p className="text-lg md:text-xl font-serif text-foreground/90 leading-loose whitespace-pre-wrap border-l-2 border-primary/20 pl-6">
-                                    {activePoem.text}
-                                </p>
-                            </div>
-
-                            <div className="p-6 border-t border-border bg-card/50 backdrop-blur flex justify-end gap-4 sticky bottom-0">
-                                <button
-                                    onClick={() => handleCopy(activePoem.text)}
-                                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-input hover:bg-secondary hover:text-secondary-foreground transition-all"
-                                >
-                                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                                    <span className="font-medium text-sm">{copied ? "Copied" : "Copy"}</span>
-                                </button>
-                                <button
-                                    onClick={() => handleSelect(activePoem)}
-                                    className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
-                                >
-                                    <Heart className="w-4 h-4" />
-                                    <span className="font-medium text-sm">Select Poem</span>
-                                </button>
-                            </div>
-                        </motion.div>
-                    </div>
-                )}
-            </AnimatePresence>
         </div>
     );
 }

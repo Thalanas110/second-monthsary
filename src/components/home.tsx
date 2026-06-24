@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, Filter, ChevronDown, Languages } from "lucide-react";
 import { useHome } from "./services/home";
-import { useScrolledPast } from "./services/effects";
+import { useScrolledPast, useLanguage } from "./services/effects";
 import { PoemCard } from "./poem-card";
 import { useLocation } from "wouter";
 
@@ -19,7 +18,7 @@ export function Home() {
     } = useHome();
 
     const [, navigate] = useLocation();
-    const [showEnglishFeatured, setShowEnglishFeatured] = useState(false);
+    const [language, setLanguage] = useLanguage();
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
@@ -123,6 +122,14 @@ export function Home() {
                                 {mood}
                             </button>
                         ))}
+                        <div className="h-5 w-px bg-card-border mx-2 hidden md:block" />
+                        <button
+                            onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
+                            className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground"
+                        >
+                            <Languages className="w-4 h-4 text-muted-foreground" />
+                            <span>{language === "english" ? "Bikolano" : "English"}</span>
+                        </button>
                     </div>
                 </motion.div>
 
@@ -164,19 +171,19 @@ export function Home() {
                                 {featuredPoem.englishText && (
                                     <div className="flex justify-center mb-12">
                                         <button
-                                            onClick={() => setShowEnglishFeatured(!showEnglishFeatured)}
-                                            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl transition-all border border-input text-sm ${showEnglishFeatured
+                                            onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
+                                            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl transition-all border border-input text-sm ${language === "english"
                                                 ? "bg-secondary text-secondary-foreground shadow-inner"
                                                 : "hover:bg-secondary hover:text-secondary-foreground"
                                                 }`}
                                         >
                                             <Languages className="w-4 h-4" />
-                                            <span className="font-medium">{showEnglishFeatured ? "Show Original" : "English Translation"}</span>
+                                            <span className="font-medium">{language === "english" ? "Show Original" : "English Translation"}</span>
                                         </button>
                                     </div>
                                 )}
                                 <div className="text-xl md:text-2xl font-serif text-foreground/90 leading-loose whitespace-pre-wrap italic">
-                                    {showEnglishFeatured && featuredPoem.englishText ? featuredPoem.englishText : featuredPoem.text}
+                                    {language === "english" && featuredPoem.englishText ? featuredPoem.englishText : featuredPoem.text}
                                 </div>
                             </div>
                         </motion.div>

@@ -4,6 +4,7 @@ import { useLocation } from "wouter";
 import { poems } from "@/data/poems";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/components/services/effects";
 
 export default function PoemPage({ params }: { params: { id: string } }) {
     const poem = poems.find(p => p.id === params.id);
@@ -11,7 +12,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     const { toast } = useToast();
     const [copied, setCopied] = useState(false);
     const [selected, setSelected] = useState(false);
-    const [showEnglish, setShowEnglish] = useState(false);
+    const [language, setLanguage] = useLanguage();
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
@@ -35,7 +36,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     }
 
     const handleCopy = async () => {
-        const textToCopy = showEnglish && poem.englishText ? poem.englishText : poem.text;
+        const textToCopy = language === "english" && poem.englishText ? poem.englishText : poem.text;
         await navigator.clipboard.writeText(textToCopy);
         setCopied(true);
         toast({ title: "Poem copied", description: "The verses have been copied to your clipboard.", duration: 3000 });
@@ -50,17 +51,32 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     return (
         <div className="min-h-[100dvh] w-full">
             <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 md:py-20">
-                    {/* Back button */}
-                    <motion.button
-                        initial={{ opacity: 0, x: -16 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4 }}
-                        onClick={() => navigate("/")}
-                        className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 group"
-                    >
-                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-                        <span className="text-sm font-medium tracking-wide">Back to library</span>
-                    </motion.button>
+                    {/* Back button & Language toggle */}
+                    <div className="flex items-center justify-between mb-12">
+                        <motion.button
+                            initial={{ opacity: 0, x: -16 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4 }}
+                            onClick={() => navigate("/")}
+                            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+                        >
+                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
+                            <span className="text-sm font-medium tracking-wide">Back to library</span>
+                        </motion.button>
+
+                        {poem.englishText && (
+                            <motion.button
+                                initial={{ opacity: 0, x: 16 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.4 }}
+                                onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
+                                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-input text-muted-foreground hover:text-foreground hover:bg-secondary transition-all text-sm font-medium"
+                            >
+                                <Languages className="w-4 h-4" />
+                                <span>{language === "english" ? "Bikolano" : "English"}</span>
+                            </motion.button>
+                        )}
+                    </div>
 
                     {/* Poem header */}
                     <motion.div
@@ -105,30 +121,17 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                     >
                         <div className="absolute -left-3 -top-3 text-6xl text-primary/10 font-serif leading-none select-none">"</div>
                         <p className="text-xl md:text-2xl font-serif text-foreground/90 leading-[2] whitespace-pre-wrap italic">
-                            {showEnglish && poem.englishText ? poem.englishText : poem.text}
+                            {language === "english" && poem.englishText ? poem.englishText : poem.text}
                         </p>
                         <div className="absolute -bottom-4 right-0 text-6xl text-primary/10 font-serif leading-none select-none rotate-180">"</div>
                     </motion.div>
 
-                    {/* Actions */}
                     <motion.div
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-20"
                     >
-                        {poem.englishText && (
-                            <button
-                                onClick={() => setShowEnglish(!showEnglish)}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all w-full sm:w-auto justify-center border border-input ${showEnglish
-                                    ? "bg-secondary text-secondary-foreground shadow-inner"
-                                    : "hover:bg-secondary hover:text-secondary-foreground"
-                                    }`}
-                            >
-                                <Languages className="w-4 h-4" />
-                                <span className="font-medium text-sm">{showEnglish ? "Show Original" : "English Translation"}</span>
-                            </button>
-                        )}
                         <button
                             onClick={handleCopy}
                             className="flex items-center gap-2 px-6 py-3 rounded-xl border border-input hover:bg-secondary hover:text-secondary-foreground transition-all w-full sm:w-auto justify-center"

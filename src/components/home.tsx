@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, Filter, ChevronDown, Languages } from "lucide-react";
+import { Search, Heart, Filter, ChevronDown, Languages, Menu, X } from "lucide-react";
 import { useHome } from "./services/home";
 import { useScrolledPast, useLanguage } from "./services/effects";
 import { PoemCard } from "./poem-card";
@@ -19,6 +20,7 @@ export function Home() {
 
     const [, navigate] = useLocation();
     const [language, setLanguage] = useLanguage();
+    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
@@ -38,7 +40,7 @@ export function Home() {
                     <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
                 </div>
 
-                <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
+                <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto mt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -47,7 +49,7 @@ export function Home() {
                         <h2 className="font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6" style={{ color: '#d9c9a8' }}>
                             To my dear madame Annah Claire,
                         </h2>
-                        <h1 className="font-serif text-foreground mb-8 drop-shadow-sm whitespace-nowrap" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>
+                        <h1 className="font-serif text-foreground mb-8 drop-shadow-sm" style={{ fontSize: 'clamp(2rem, 7vw, 5.5rem)' }}>
                             Happy 2nd monthsary!
                         </h1>
                         <p className="text-lg md:text-2xl text-foreground/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
@@ -88,49 +90,146 @@ export function Home() {
             </section>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 -mt-12">
-                {/* Filters */}
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-12">
+                {/* Filters — mobile-collapsible, desktop-inline */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={showFilters ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     style={{ pointerEvents: showFilters ? "auto" : "none" }}
-                    className="bg-card/80 backdrop-blur-md border border-card-border p-4 md:p-6 rounded-2xl shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between sticky top-4 z-30"
+                    className="bg-card/80 backdrop-blur-md border border-card-border rounded-2xl shadow-sm mb-12 sticky top-4 z-30 overflow-hidden"
                 >
-                    <div className="relative w-full md:w-96">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                        <input
-                            type="text"
-                            placeholder="Search poems or poets..."
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-background border border-input rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all font-sans"
-                        />
+                    {/* Top row: search + mobile toggle (desktop: full bar) */}
+                    <div className="flex items-center gap-3 p-3 md:p-6 md:gap-4">
+                        <div className="relative flex-1 md:w-96 md:flex-none">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <input
+                                type="text"
+                                placeholder="Search poems or poets..."
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                className="w-full pl-10 pr-4 py-2.5 bg-background border border-input rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all font-sans"
+                            />
+                        </div>
+
+                        {/* Mobile-only hamburger toggle */}
+                        <button
+                            type="button"
+                            aria-label={mobileFiltersOpen ? "Close filters" : "Open filters"}
+                            aria-expanded={mobileFiltersOpen}
+                            onClick={() => setMobileFiltersOpen((prev) => !prev)}
+                            className="md:hidden relative flex items-center justify-center w-10 h-10 rounded-xl border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground transition-all shrink-0"
+                        >
+                            <AnimatePresence mode="wait" initial={false}>
+                                {mobileFiltersOpen ? (
+                                    <motion.span
+                                        key="close"
+                                        initial={{ opacity: 0, rotate: -90 }}
+                                        animate={{ opacity: 1, rotate: 0 }}
+                                        exit={{ opacity: 0, rotate: 90 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="absolute"
+                                    >
+                                        <X className="w-5 h-5" />
+                                    </motion.span>
+                                ) : (
+                                    <motion.span
+                                        key="menu"
+                                        initial={{ opacity: 0, rotate: 90 }}
+                                        animate={{ opacity: 1, rotate: 0 }}
+                                        exit={{ opacity: 0, rotate: -90 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="absolute"
+                                    >
+                                        <Menu className="w-5 h-5" />
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                            {/* Active-filter badge */}
+                            {selectedMood !== "All" && !mobileFiltersOpen && (
+                                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-card/80" />
+                            )}
+                        </button>
+
+                        {/* Desktop-only inline filters */}
+                        <div className="hidden md:flex items-center gap-2 flex-wrap ml-auto">
+                            <Filter className="h-4 w-4 text-muted-foreground mr-2 shrink-0" />
+                            {moods.map(mood => (
+                                <button
+                                    key={mood}
+                                    onClick={() => setSelectedMood(mood)}
+                                    className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm transition-all ${selectedMood === mood
+                                        ? "bg-primary text-primary-foreground shadow-sm"
+                                        : "bg-background text-foreground/70 hover:bg-secondary hover:text-foreground border border-input"
+                                        }`}
+                                >
+                                    {mood}
+                                </button>
+                            ))}
+                            <div className="h-5 w-px bg-card-border mx-2" />
+                            <button
+                                onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
+                                className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground"
+                            >
+                                <Languages className="w-4 h-4 text-muted-foreground" />
+                                <span>{language === "english" ? "Bikolano" : "English"}</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="flex items-center gap-2 flex-wrap w-full md:w-auto">
-                        <Filter className="h-4 w-4 text-muted-foreground mr-2 shrink-0" />
-                        {moods.map(mood => (
-                            <button
-                                key={mood}
-                                onClick={() => setSelectedMood(mood)}
-                                className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm transition-all ${selectedMood === mood
-                                    ? "bg-primary text-primary-foreground shadow-sm"
-                                    : "bg-background text-foreground/70 hover:bg-secondary hover:text-foreground border border-input"
-                                    }`}
+                    {/* Mobile collapsible drawer */}
+                    <AnimatePresence initial={false}>
+                        {mobileFiltersOpen && (
+                            <motion.div
+                                key="mobile-filters"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                className="md:hidden overflow-hidden"
                             >
-                                {mood}
-                            </button>
-                        ))}
-                        <div className="h-5 w-px bg-card-border mx-2 hidden md:block" />
-                        <button
-                            onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
-                            className="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground"
-                        >
-                            <Languages className="w-4 h-4 text-muted-foreground" />
-                            <span>{language === "english" ? "Bikolano" : "English"}</span>
-                        </button>
-                    </div>
+                                <div className="border-t border-card-border px-3 pb-4 pt-3 flex flex-col gap-3">
+                                    {/* Mood filters */}
+                                    <div className="flex items-center gap-2">
+                                        <Filter className="h-4 w-4 text-muted-foreground shrink-0" />
+                                        <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Mood</span>
+                                    </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {moods.map(mood => (
+                                            <button
+                                                key={mood}
+                                                onClick={() => {
+                                                    setSelectedMood(mood);
+                                                    setMobileFiltersOpen(false);
+                                                }}
+                                                className={`whitespace-nowrap px-4 py-2 rounded-full text-sm transition-all ${selectedMood === mood
+                                                    ? "bg-primary text-primary-foreground shadow-sm"
+                                                    : "bg-background text-foreground/70 hover:bg-secondary hover:text-foreground border border-input"
+                                                    }`}
+                                            >
+                                                {mood}
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    {/* Divider */}
+                                    <div className="h-px bg-card-border" />
+
+                                    {/* Language toggle */}
+                                    <button
+                                        onClick={() => {
+                                            setLanguage(language === "bikol" ? "english" : "bikol");
+                                            setMobileFiltersOpen(false);
+                                        }}
+                                        className="flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all border border-input bg-background text-foreground/70 hover:bg-secondary hover:text-foreground self-start"
+                                    >
+                                        <Languages className="w-4 h-4 text-muted-foreground" />
+                                        <span>{language === "english" ? "Bikolano" : "English"}</span>
+                                    </button>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </motion.div>
 
                 {/* Gallery */}

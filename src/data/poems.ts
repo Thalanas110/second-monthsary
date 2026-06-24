@@ -15,6 +15,7 @@ export interface Poem {
 // all 9 will be in Bikol.
 
 export const poems: Poem[] = [
+  // poem 1
   {
     id: "1",
     title: "Tesis Pasiring Satoya",
@@ -118,7 +119,7 @@ Gugma uminabot sa may purtahan.
 
 Kaya paghiling ko sa kabanata,
 Sa gabos na gabat na sinapo na,
-Bako lang sarong tesis natapos ko,
+Bako lang sarong tesis natapos ko--,
 Nahiling ko dalan pasiring saimo.`,
     englishText: `The year arrived with iron on its back,
 Dragging deadlines across sleepless floors.
@@ -218,7 +219,6 @@ Love stepped quietly onto the stage.
 So when I look at those worn-out chapters,
 At every burden I once pushed through,
 I see more than a manuscript finished—
-
 I see the road that led to you.`
   },
   {

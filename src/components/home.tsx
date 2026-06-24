@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, Filter, ChevronDown } from "lucide-react";
+import { Search, Heart, Filter, ChevronDown, Languages } from "lucide-react";
 import { useHome } from "./services/home";
 import { useScrolledPast } from "./services/effects";
 import { PoemCard } from "./poem-card";
@@ -18,6 +19,7 @@ export function Home() {
     } = useHome();
 
     const [, navigate] = useLocation();
+    const [showEnglishFeatured, setShowEnglishFeatured] = useState(false);
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
@@ -158,9 +160,23 @@ export function Home() {
                             <div className="relative z-10 text-center max-w-3xl mx-auto">
                                 <h2 className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-8">Your Selected Verse</h2>
                                 <h3 className="text-3xl md:text-5xl font-serif text-foreground mb-4">{featuredPoem.title}</h3>
-                                <p className="text-lg text-muted-foreground uppercase tracking-widest mb-12">{featuredPoem.poet}</p>
+                                <p className="text-lg text-muted-foreground uppercase tracking-widest mb-8">{featuredPoem.poet}</p>
+                                {featuredPoem.englishText && (
+                                    <div className="flex justify-center mb-12">
+                                        <button
+                                            onClick={() => setShowEnglishFeatured(!showEnglishFeatured)}
+                                            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl transition-all border border-input text-sm ${showEnglishFeatured
+                                                ? "bg-secondary text-secondary-foreground shadow-inner"
+                                                : "hover:bg-secondary hover:text-secondary-foreground"
+                                                }`}
+                                        >
+                                            <Languages className="w-4 h-4" />
+                                            <span className="font-medium">{showEnglishFeatured ? "Show Original" : "English Translation"}</span>
+                                        </button>
+                                    </div>
+                                )}
                                 <div className="text-xl md:text-2xl font-serif text-foreground/90 leading-loose whitespace-pre-wrap italic">
-                                    {featuredPoem.text}
+                                    {showEnglishFeatured && featuredPoem.englishText ? featuredPoem.englishText : featuredPoem.text}
                                 </div>
                             </div>
                         </motion.div>

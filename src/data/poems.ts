@@ -5,6 +5,7 @@ export interface Poem {
   title: string;
   poet: string;
   text: string;
+  englishText?: string;
   moods: Mood[];
   year?: string;
 }
@@ -32,7 +33,10 @@ Nor lose possession of that fair thou owest;
 Nor shall Death brag thou wander'st in his shade,
 When in eternal lines to time thou growest:
 So long as men can breathe or eyes can see,
-So long lives this, and this gives life to thee.`
+So long lives this, and this gives life to thee.`,
+    englishText: `(Translated text here)
+Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:`
   },
   {
     id: "2",

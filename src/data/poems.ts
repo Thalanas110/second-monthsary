@@ -20,7 +20,8 @@ export const poems: Poem[] = [
     poet: "William Shakespeare",
     moods: ["Devotion", "Joy"],
     year: "1609",
-    text: `Shall I compare thee to a summer's day?
+    text: `[Bikolano translation for Sonnet 18 goes here]`,
+    englishText: `Shall I compare thee to a summer's day?
 Thou art more lovely and more temperate:
 Rough winds do shake the darling buds of May,
 And summer's lease hath all too short a date:
@@ -33,10 +34,7 @@ Nor lose possession of that fair thou owest;
 Nor shall Death brag thou wander'st in his shade,
 When in eternal lines to time thou growest:
 So long as men can breathe or eyes can see,
-So long lives this, and this gives life to thee.`,
-    englishText: `(Translated text here)
-Shall I compare thee to a summer's day?
-Thou art more lovely and more temperate:`
+So long lives this, and this gives life to thee.`
   },
   {
     id: "2",
@@ -44,7 +42,8 @@ Thou art more lovely and more temperate:`
     poet: "Pablo Neruda",
     moods: ["Farewell", "Longing", "Reflection"],
     year: "1924",
-    text: `Tonight I can write the saddest lines.
+    text: `[Bikolano translation for Tonight I Can Write The Saddest Lines goes here]`,
+    englishText: `Tonight I can write the saddest lines.
 
 Write, for example, 'The night is shattered
 and the blue stars shiver in the distance.'
@@ -75,7 +74,8 @@ The night is shattered and she is not with me.`
     poet: "Elizabeth Barrett Browning",
     moods: ["Devotion", "Passion"],
     year: "1850",
-    text: `How do I love thee? Let me count the ways.
+    text: `[Bikolano translation for Sonnet 43 goes here]`,
+    englishText: `How do I love thee? Let me count the ways.
 I love thee to the depth and breadth and height
 My soul can reach, when feeling out of sight
 For the ends of being and ideal grace.
@@ -96,7 +96,8 @@ I shall but love thee better after death.`
     poet: "Lord Byron",
     moods: ["Devotion", "Reflection"],
     year: "1815",
-    text: `She walks in beauty, like the night
+    text: `[Bikolano translation for She Walks in Beauty goes here]`,
+    englishText: `She Walks in beauty, like the night
 Of cloudless climes and starry skies;
 And all that's best of dark and bright
 Meet in her aspect and her eyes;
@@ -123,7 +124,8 @@ A heart whose love is innocent!`
     poet: "John Keats",
     moods: ["Longing", "Devotion"],
     year: "1819",
-    text: `Bright star, would I were stedfast as thou art—
+    text: `[Bikolano translation for Bright Star goes here]`,
+    englishText: `Bright star, would I were stedfast as thou art—
 Not in lone splendour hung aloft the night
 And watching, with eternal lids apart,
 Like nature's patient, sleepless Eremite,
@@ -144,7 +146,8 @@ And so live ever—or else swoon to death.`
     poet: "W. B. Yeats",
     moods: ["Devotion", "Longing"],
     year: "1899",
-    text: `Had I the heavens' embroidered cloths,
+    text: `[Bikolano translation for He Wishes for the Cloths of Heaven goes here]`,
+    englishText: `Had I the heavens' embroidered cloths,
 Enwrought with golden and silver light,
 The blue and the dim and the dark cloths
 Of night and light and the half light,
@@ -159,7 +162,8 @@ Tread softly because you tread on my dreams.`
     poet: "Percy Bysshe Shelley",
     moods: ["Passion", "Longing"],
     year: "1819",
-    text: `The fountains mingle with the river
+    text: `[Bikolano translation for Love's Philosophy goes here]`,
+    englishText: `The fountains mingle with the river
    And the rivers with the ocean,
 The winds of heaven mix for ever
    With a sweet emotion;
@@ -183,7 +187,8 @@ What is all this sweet work worth
     poet: "Walt Whitman",
     moods: ["Joy", "Reflection"],
     year: "1860",
-    text: `A glimpse through an interstice caught,
+    text: `[Bikolano translation for A Glimpse goes here]`,
+    englishText: `A glimpse through an interstice caught,
 Of a crowd of workmen and drivers in a bar-room around the stove late of a winter night, and I unremark'd seated in a corner,
 Of a youth who loves me and whom I love, silently approaching and seating himself near, that he may hold me by the hand,
 A long while amid the noises of coming and going, of drinking and oath and smutty jest,

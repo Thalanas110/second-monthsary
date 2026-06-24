@@ -53,38 +53,37 @@ export function Home() {
                             I took some time to create this so that you can enjoy reading more poems, ehe
                         </p>
                     </motion.div>
-
-                    {/* Scroll down indicator — disappears once filter bar is shown */}
-                    <AnimatePresence>
-                        {!showFilters && (
-                            <motion.div
-                                key="scroll-indicator"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -8, transition: { duration: 0.4 } }}
-                                transition={{ duration: 0.8, delay: 1.2 }}
-                                className="flex flex-col items-center gap-1 select-none pointer-events-none"
-                                style={{ marginTop: '32px' }}
-                            >
-                                <span
-                                    className="text-xs sm:text-sm font-medium tracking-widest uppercase"
-                                    style={{ color: '#d9c9a8', letterSpacing: '0.18em' }}
-                                >
-                                    Scroll down to view poems
-                                </span>
-                                <motion.div
-                                    animate={{ y: [0, 6, 0] }}
-                                    transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                                >
-                                    <ChevronDown
-                                        className="w-5 h-5 sm:w-6 sm:h-6"
-                                        style={{ color: '#d9c9a8' }}
-                                    />
-                                </motion.div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
                 </div>
+
+                {/* Scroll down indicator — absolutely positioned so it never shifts the text */}
+                <AnimatePresence>
+                    {!showFilters && (
+                        <motion.div
+                            key="scroll-indicator"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8, transition: { duration: 0.4 } }}
+                            transition={{ duration: 0.8, delay: 1.2 }}
+                            className="absolute bottom-2 left-0 right-0 flex flex-col items-center gap-1 select-none pointer-events-none z-10"
+                        >
+                            <span
+                                className="text-xs sm:text-sm font-medium tracking-widest uppercase"
+                                style={{ color: '#d9c9a8', letterSpacing: '0.18em' }}
+                            >
+                                Scroll down to view poems
+                            </span>
+                            <motion.div
+                                animate={{ y: [0, 6, 0] }}
+                                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                <ChevronDown
+                                    className="w-5 h-5 sm:w-6 sm:h-6"
+                                    style={{ color: '#d9c9a8' }}
+                                />
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </section>
 
             {/* Main Content */}

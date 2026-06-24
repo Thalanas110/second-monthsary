@@ -28,7 +28,7 @@ export function Home() {
     return (
         <div className="min-h-[100dvh] w-full bg-background selection:bg-primary/20 pb-24">
             {/* Hero Section */}
-            <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center">
+            <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center mb-[-1px]">
                 <div className="absolute inset-0 z-0">
                     <img
                         src={versaillesImg}

@@ -2,13 +2,27 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Heart } from "lucide-react";
 
+const versaillesImg = "/versailles style.png";
+
 export default function NotFound() {
   const [, navigate] = useLocation();
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-background overflow-hidden relative">
+    <div className="min-h-[100dvh] w-full flex items-center justify-center bg-background overflow-hidden relative selection:bg-primary/20">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src={versaillesImg}
+          alt="Versailles background"
+          className="w-full h-full object-cover object-center opacity-50 scale-105 motion-safe:animate-[pulse_10s_ease-in-out_infinite_alternate]"
+          style={{ animationDuration: '20s' }}
+        />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+      </div>
+
       {/* Decorative background blobs */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-0">
         <div
           className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, hsl(var(--primary)), transparent 70%)" }}
@@ -20,8 +34,8 @@ export default function NotFound() {
       </div>
 
       {/* Faint watermark heart */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <Heart className="w-[40vw] h-[40vw] text-primary opacity-[0.04]" strokeWidth={0.5} />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+        <Heart className="w-[40vw] h-[40vw] text-primary opacity-[0.03]" strokeWidth={0.5} />
       </div>
 
       <motion.div

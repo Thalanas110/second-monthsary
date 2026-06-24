@@ -12,6 +12,7 @@ export interface Poem {
 
 // all poems here are currently just temporary.
 // deal with me for now.
+// all 9 will be in Bikol.
 
 export const poems: Poem[] = [
   {
@@ -97,7 +98,7 @@ I shall but love thee better after death.`
     moods: ["Devotion", "Reflection"],
     year: "1815",
     text: `[Bikolano translation for She Walks in Beauty goes here]`,
-    englishText: `She Walks in beauty, like the night
+    englishText: `She walks in beauty, like the night
 Of cloudless climes and starry skies;
 And all that's best of dark and bright
 Meet in her aspect and her eyes;

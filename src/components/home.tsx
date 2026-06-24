@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, Copy, Check, X, Filter } from "lucide-react";
 import { useHome } from "./services/home";
+import { useScrolledPast } from "./services/effects";
 import { PoemCard } from "./poem-card";
 
 const versaillesImg = "/versailles style.png";
@@ -17,6 +18,9 @@ export function Home() {
         handleCopy,
         handleSelect,
     } = useHome();
+
+    // Show the filter bar only after the user scrolls past the hero
+    const showFilters = useScrolledPast(300);
 
     return (
         <div className="min-h-[100dvh] w-full bg-background selection:bg-primary/20 pb-24">
@@ -39,14 +43,14 @@ export function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
                     >
-                        <h2 className="text-primary font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6">
-                            A Salon of Verses
+                        <h2 className="font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6" style={{ color: '#d9c9a8' }}>
+                            To my dear madame Annah Claire,
                         </h2>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-foreground mb-8 drop-shadow-sm">
-                            Versailles
+                        <h1 className="font-serif text-foreground mb-8 drop-shadow-sm whitespace-nowrap" style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}>
+                            Happy 2nd monthsary!
                         </h1>
                         <p className="text-lg md:text-2xl text-foreground/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
-                            Timeless love letters, carefully curated for the romantic soul. Step into the golden light.
+                            I took some time to create this so that you can enjoy reading more poems, ehe
                         </p>
                     </motion.div>
                 </div>
@@ -55,7 +59,13 @@ export function Home() {
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 -mt-12">
                 {/* Filters */}
-                <div className="bg-card/80 backdrop-blur-md border border-card-border p-4 md:p-6 rounded-2xl shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between sticky top-4 z-30">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={showFilters ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    style={{ pointerEvents: showFilters ? "auto" : "none" }}
+                    className="bg-card/80 backdrop-blur-md border border-card-border p-4 md:p-6 rounded-2xl shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between sticky top-4 z-30"
+                >
                     <div className="relative w-full md:w-96">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <input
@@ -82,7 +92,7 @@ export function Home() {
                             </button>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Gallery */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -90,10 +100,8 @@ export function Home() {
                         {filteredPoems.map((poem, i) => (
                             <motion.div
                                 key={poem.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.5, delay: i * 0.05 }}
+                                transition={{ duration: 0.3 }}
                             >
                                 <PoemCard poem={poem} onClick={() => setActivePoem(poem)} />
                             </motion.div>

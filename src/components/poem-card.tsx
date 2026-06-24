@@ -1,11 +1,21 @@
 import { Poem } from "@/data/poems";
 import { motion } from "framer-motion";
+import { useInView, useScrolledPast } from "./services/effects";
 
 export function PoemCard({ poem, onClick }: { poem: Poem; onClick: () => void }) {
     const preview = poem.text.split("\n").filter(l => l.trim().length > 0).slice(0, 3).join("\n");
+    const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.1 });
+    const scrolledPast = useScrolledPast(300);
+
+    // Visible only when in viewport AND past the hero threshold (mirrors navbar behaviour)
+    const visible = inView && scrolledPast;
 
     return (
         <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 30 }}
+            animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             whileHover={{ y: -4, scale: 1.01 }}
             className="group relative cursor-pointer flex flex-col justify-between h-full p-6 md:p-8 bg-card rounded-xl border border-card-border shadow-sm hover:shadow-md transition-all duration-300"
             onClick={onClick}

@@ -21,7 +21,105 @@ export const poems: Poem[] = [
     poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Joy"],
     year: "2026",
-    text: `[Bikolano version of Tesis Pasiring Satoya goes here]`,
+    text: `Taon nag-abot na may dalang batbat,
+Sa tahaw kan bangging pinag-pupuyat,
+Kabanata garo bagas na gabat,
+Palad igwang pinto na pigbubuklat.
+
+Kinaban ko pano nin mga petsa,
+Sulat na pula an nagdadikta na,
+Kada saldang may panibagong gera,
+Sa banggi mayo nin pagpahinga na.
+
+Taramon kong koda buhay ko gayod,
+Sistema na pino datos na sunod,
+Pagkamoot arog nin sarong silod,
+Baybayon na sakuyang tinalikod.
+
+Sa sarong amigo may ngaran duman,
+Huyop sa langit kong pano nin uran,
+Mayo nin trompeta o kurugkusan,
+Kundi pag-usisa sanang nag-ngaran.
+
+Sadit na garo laad nin kandila,
+Sa tapos kan aldaw namidbidan ka,
+Sa tahaw kan ribok asin problema,
+An isip ko palan yaraon na.
+
+MeatLens nag-aagi sa husgado man,
+Palad kaini kailangang matangdan,
+Sa tahaw kan agi o kinikunan,
+May mabansay na istorya nagpunan.
+
+Proyekto nagtindog sa mga ilaw,
+Sa atubang nin propesor na puraw,
+Sa likod kan mga pormal na aldaw,
+May bagong puturong sakong natanaw.
+
+Nakaabot aldaw na nagkakusog,
+Pag-asa ko sa kamot nagkukudog,
+Sa ikabente nin Mayo nagtindog,
+Suldados na halat utos magsunod.
+
+An simbag bako pang sarong sumpaan,
+Kundi sarong permiso na may dalan,
+Sa bentesyete, pintuan nabuksan,
+Sa silensyong aldaw sako nagihan.
+
+Kaya pagkamoot ta nagdakula,
+Sa orolay na pano nin pag-ogma,
+Mayong parada sa langit ni tala,
+Kundi duwang puso na may tama na.
+
+Mga isip ko sunurat sa rawit,
+Tinago sadiri sa rimang higpit,
+Linya may pagmawot na sako pirit,
+Kada tula sumagip oras pilit.
+
+Koda nagin saro man pag-amin ko,
+Lohika nakanuod magkapuso,
+Nahiling ninda simpleng website gusto,
+Pero puso kong nagtuga saimo.
+
+An rayo garo tubig na maalon,
+Mahiwas sa tahaw kan mga baybayon,
+Kada mensahe sako nag-inayon,
+Nag-giya sako urog pa kan noon.
+
+May olang na dai ta man pinili,
+Mga bagyong dai ta apod digdi,
+Nagdanay sa bangging madiklom pirmi,
+Nagtutubod sa aga na saro ni.
+
+An aldaw maluway na nag-abante,
+Magabat na garo uran sa gabi,
+Pag-asa asin takot magkabali,
+Naghahalat sa lanob na madali.
+
+Hunyo nagdara huyop sa pasilyo,
+An paros bagong garo bago totoo,
+May nagbabago na daing mahiling,
+Garo agang nag-aandam kan bining.
+
+Nag-abot an ikagasiyam—tunay,
+Petsang ukit sa sakuyang kalag na marhay,
+Mayong kanta na nagtukar sa bintana,
+Pero an kinaban nakumpleto na.
+
+Asin kan simbag mo sakong makua,
+Taon nagsilensyo nawara duda,
+An natada sana pusong nagkaba,
+Inuutro totoong pambihira.
+
+Paghuna ko tesis gigibong dalan,
+Ngaran ko sa pahina susuratan,
+Pero sa mga petsa suraton man,
+Gugma uminabot sa may purtahan.
+
+Kaya paghiling ko sa kabanata,
+Sa gabos na gabat na sinapo na,
+Bako lang sarong tesis natapos ko,
+Nahiling ko dalan pasiring saimo.`,
     englishText: `The year arrived with iron on its back,
 Dragging deadlines across sleepless floors.
 I carried chapters like sacks of wet grain,

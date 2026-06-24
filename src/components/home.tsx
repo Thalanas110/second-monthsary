@@ -28,7 +28,7 @@ export function Home() {
     return (
         <div className="min-h-[100dvh] w-full bg-background selection:bg-primary/20 pb-24">
             {/* Hero Section */}
-            <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center mb-[-1px]">
+            <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 z-0">
                     <img
                         src={versaillesImg}
@@ -88,6 +88,8 @@ export function Home() {
                     )}
                 </AnimatePresence>
             </section>
+            {/* Seam cover: fills the sub-pixel compositing gap between the hero's overflow-hidden boundary and the background */}
+            <div className="h-[3px] w-full bg-background -mt-[3px] relative z-10" />
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-12">

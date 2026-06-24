@@ -17,25 +17,111 @@ export interface Poem {
 export const poems: Poem[] = [
   {
     id: "1",
-    title: "Sonnet 18: Shall I compare thee to a summer's day?",
-    poet: "William Shakespeare",
+    title: "Tesis Pasiring Satoya",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Joy"],
-    year: "1609",
-    text: `[Bikolano translation for Sonnet 18 goes here]`,
-    englishText: `Shall I compare thee to a summer's day?
-Thou art more lovely and more temperate:
-Rough winds do shake the darling buds of May,
-And summer's lease hath all too short a date:
-Sometime too hot the eye of heaven shines,
-And often is his gold complexion dimm'd;
-And every fair from fair sometime declines,
-By chance or nature's changing course untrimm'd;
-But thy eternal summer shall not fade,
-Nor lose possession of that fair thou owest;
-Nor shall Death brag thou wander'st in his shade,
-When in eternal lines to time thou growest:
-So long as men can breathe or eyes can see,
-So long lives this, and this gives life to thee.`
+    year: "2026",
+    text: `[Bikolano version of Tesis Pasiring Satoya goes here]`,
+    englishText: `The year arrived with iron on its back,
+Dragging deadlines across sleepless floors.
+I carried chapters like sacks of wet grain,
+Not knowing fate had opened another door.
+
+My world was numbered by tasks and dates,
+By comments scribbled in crimson ink.
+Each sunrise demanded another battle,
+Each midnight refused to let me sink.
+
+I spoke the language of code and data,
+Of models trained and systems refined.
+Love was a country beyond my borders,
+A distant shore I had left behind.
+
+Then through a friend came a quiet name,
+A whisper crossing my crowded skies.
+No thunder rolled, no trumpets sounded,
+Just curiosity in disguise.
+
+What started small like a candle's flame
+Began to linger when day was through.
+Among the noise of reports and meetings,
+I found myself thinking of you.
+
+Meanwhile MeatLens marched toward judgment,
+Its fate awaiting a panel's gaze.
+Yet somewhere between defense and revision,
+A gentler story entered my days.
+
+The project stood before lights and questions,
+Before professors and careful eyes.
+Yet hidden behind the formal proceedings,
+Another future began to rise.
+
+Then came the day I gathered courage,
+Holding my hope with trembling hands.
+The twentieth of May stood before me,
+A soldier awaiting his last commands.
+
+The answer was not a final promise,
+But permission to begin the way.
+On the twenty-seventh, a gate was opened,
+And I stepped through that quiet day.
+
+So courtship grew in ordinary moments,
+In conversations carried by light.
+No grand procession crossed the heavens,
+Only two hearts learning what felt right.
+
+I wrote my thoughts into patient verses,
+Hiding pieces of myself in rhyme.
+Each stanza carried a silent longing,
+Each poem a fragment rescued from time.
+
+Then code became another confession.
+Lines of logic learned how to feel.
+What others saw as a simple website,
+Was a heart revealing what words conceal.
+
+Distance remained like restless waters,
+Stretching wide between shore and shore.
+Yet every message became a lantern,
+Guiding me farther than before.
+
+There were obstacles neither of us chose,
+Storms not summoned by your hand or mine.
+Still we remained through uncertain evenings,
+Trusting tomorrow would arrive in time.
+
+The days moved slowly toward an answer,
+Heavy as rain before it falls.
+Hope and fear shared the same small room,
+Waiting within unfinished walls.
+
+June carried whispers through every hallway.
+The air itself seemed strangely new.
+Something was changing beyond perception,
+Like dawn preparing its first bright hue.
+
+Then came the nineteenth—soft yet mighty,
+A date now carved within my soul.
+No orchestra played beyond the window,
+Yet suddenly the world felt whole.
+
+And when your answer finally reached me,
+The years grew silent, the doubts withdrew.
+All that remained was a trembling heartbeat,
+Repeating one impossible truth.
+
+I thought this thesis would earn a future,
+A name upon a graduate's page.
+Yet somewhere between the drafts and deadlines,
+Love stepped quietly onto the stage.
+
+So when I look at those worn-out chapters,
+At every burden I once pushed through,
+I see more than a manuscript finished—
+
+I see the road that led to you.`
   },
   {
     id: "2",

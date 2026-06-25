@@ -1,7 +1,10 @@
 export type Mood = "Longing" | "Devotion" | "Passion" | "Joy" | "Farewell" | "Reflection";
 
-export interface Poem {
+export type ContentType = "poem" | "lsm" | "voicemail";
+
+export interface ArchiveEntry {
   id: string;
+  type: ContentType;
   title: string;
   englishTitle?: string;
   poet: string;
@@ -9,16 +12,22 @@ export interface Poem {
   englishText?: string;
   moods: Mood[];
   year?: string;
+  audioSrc?: string;
+  transcript?: string;
+  durationLabel?: string;
 }
+
+export type Poem = ArchiveEntry;
 
 // all poems here are currently just temporary.
 // deal with me for now.
-// all 9 will be in Bikol.
+// all 10 will be in Bikol.
 
-export const poems: Poem[] = [
+export const poems: ArchiveEntry[] = [
   // poem 1
   {
     id: "1",
+    type: "poem",
     title: "Tesis Pasiring Satoya",
     englishTitle: "Thesis To Us",
     poet: "Adriaan M. Dimate | BSCS 4-A",
@@ -225,9 +234,10 @@ I see the road that led to you.`
   },
   {
     id: "2",
+    type: "poem",
     title: "Maski an Signal Magpalya",
     englishTitle: "Even When the Signal Fails",
-    poet: "Adriaan M. Dimate",
+    poet: "Adriaan M. Dimate, BSCS 4-A",
     moods: ["Devotion", "Longing", "Reflection"],
     year: "2026",
     text: `Igwang mga banggi na pano nin uran,
@@ -436,6 +446,7 @@ Let every wave repeat one answer:
   },
   {
     id: "3",
+    type: "poem",
     title: "[Bikolano title for Sonnet 43 goes here]",
     englishTitle: "How Do I Love Thee? (Sonnet 43)",
     poet: "Elizabeth Barrett Browning",
@@ -459,6 +470,7 @@ I shall but love thee better after death.`
   },
   {
     id: "4",
+    type: "poem",
     title: "[Bikolano title for She Walks in Beauty goes here]",
     englishTitle: "She Walks in Beauty",
     poet: "Lord Byron",
@@ -488,6 +500,7 @@ A heart whose love is innocent!`
   },
   {
     id: "5",
+    type: "poem",
     title: "[Bikolano title for Bright Star goes here]",
     englishTitle: "Bright Star",
     poet: "John Keats",
@@ -511,6 +524,7 @@ And so live ever—or else swoon to death.`
   },
   {
     id: "6",
+    type: "poem",
     title: "[Bikolano title for He Wishes for the Cloths of Heaven goes here]",
     englishTitle: "He Wishes for the Cloths of Heaven",
     poet: "W. B. Yeats",
@@ -528,6 +542,7 @@ Tread softly because you tread on my dreams.`
   },
   {
     id: "7",
+    type: "lsm",
     title: "[Bikolano title for Love's Philosophy goes here]",
     englishTitle: "Love's Philosophy",
     poet: "Percy Bysshe Shelley",
@@ -554,6 +569,7 @@ What is all this sweet work worth
   },
   {
     id: "8",
+    type: "lsm",
     title: "[Bikolano title for A Glimpse goes here]",
     englishTitle: "A Glimpse",
     poet: "Walt Whitman",
@@ -565,5 +581,45 @@ Of a crowd of workmen and drivers in a bar-room around the stove late of a winte
 Of a youth who loves me and whom I love, silently approaching and seating himself near, that he may hold me by the hand,
 A long while amid the noises of coming and going, of drinking and oath and smutty jest,
 There we two, content, happy in being together, speaking little, perhaps not a word.`
+  },
+  {
+    id: "9",
+    type: "voicemail",
+    title: "First Voicemail Placeholder",
+    englishTitle: "First Voicemail Placeholder",
+    poet: "Adriaan M. Dimate",
+    moods: ["Devotion", "Reflection"],
+    year: "2026",
+    text: `This transcript is a placeholder while the real voicemail is still being prepared.
+
+It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
+    englishText: `This transcript is a placeholder while the real voicemail is still being prepared.
+
+It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
+    transcript: `This transcript is a placeholder while the real voicemail is still being prepared.
+
+It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
+    audioSrc: "/audio/voicemail-placeholder.wav",
+    durationLabel: "0:01",
+  },
+  {
+    id: "10",
+    type: "voicemail",
+    title: "Second Voicemail Placeholder",
+    englishTitle: "Second Voicemail Placeholder",
+    poet: "Adriaan M. Dimate",
+    moods: ["Longing", "Joy"],
+    year: "2026",
+    text: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+
+Once the real audio exists, only the metadata and text need to change.`,
+    englishText: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+
+Once the real audio exists, only the metadata and text need to change.`,
+    transcript: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+
+Once the real audio exists, only the metadata and text need to change.`,
+    audioSrc: "/audio/voicemail-placeholder.wav",
+    durationLabel: "0:01",
   }
 ];

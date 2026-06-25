@@ -1,80 +1,58 @@
-import { useState, useEffect, useRef, RefObject } from "react";
+export const heroIntroEffect = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 1, delay: 0.2 },
+};
 
-/**
- * Returns `true` once the user has scrolled past `threshold` pixels.
- * Resets back to `false` if they scroll back to the top.
- */
-export function useScrolledPast(threshold = 100): boolean {
-    const [scrolledPast, setScrolledPast] = useState(false);
+export const scrollIndicatorEffect = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -8, transition: { duration: 0.4 } },
+    transition: { duration: 0.8, delay: 1.2 },
+};
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolledPast(window.scrollY > threshold);
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        // Run once on mount in case the page is already scrolled
-        handleScroll();
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [threshold]);
-
-    return scrolledPast;
-}
-
-/**
- * Returns a [ref, inView] tuple. `inView` toggles `true` when the element
- * enters the viewport and `false` when it leaves — enabling both reveal
- * and disappear animations as the user scrolls.
- */
-export function useInView<T extends Element>(
-    options: IntersectionObserverInit = { threshold: 0.1 }
-): [RefObject<T | null>, boolean] {
-    const ref = useRef<T>(null);
-    const [inView, setInView] = useState(false);
-
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-
-        const observer = new IntersectionObserver(([entry]) => {
-            // Toggle both ways: appear on enter, disappear on leave
-            setInView(entry.isIntersecting);
-        }, options);
-
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, [options]);
-
-    return [ref, inView];
-}
-
-/**
- * Custom hook to manage global language state (Bikolano vs English)
- * and synchronize it across components using localStorage and a custom event.
- */
-export function useLanguage() {
-    const [language, setLanguageState] = useState<"bikol" | "english">(() => {
-        if (typeof window !== "undefined") {
-            return (localStorage.getItem("app-language") as "bikol" | "english") || "bikol";
-        }
-        return "bikol";
-    });
-
-    const setLanguage = (lang: "bikol" | "english") => {
-        localStorage.setItem("app-language", lang);
-        setLanguageState(lang);
-        window.dispatchEvent(new Event("app-language-change"));
+export function stickyFilterBarEffect(visible: boolean) {
+    return {
+        initial: { opacity: 0, y: -20 },
+        animate: visible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 },
+        transition: { duration: 0.4, ease: "easeOut" as const },
+        style: { pointerEvents: visible ? ("auto" as const) : ("none" as const) },
     };
-
-    useEffect(() => {
-        const handleLanguageChange = () => {
-            const currentLang = (localStorage.getItem("app-language") as "bikol" | "english") || "bikol";
-            setLanguageState(currentLang);
-        };
-        window.addEventListener("app-language-change", handleLanguageChange);
-        return () => window.removeEventListener("app-language-change", handleLanguageChange);
-    }, []);
-
-    return [language, setLanguage] as const;
 }
+
+export const mobileFiltersDrawerEffect = {
+    initial: { height: 0, opacity: 0 },
+    animate: { height: "auto", opacity: 1 },
+    exit: { height: 0, opacity: 0 },
+    transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as const },
+};
+
+export function poemCardRevealEffect(visible: boolean) {
+    return {
+        initial: { opacity: 0, y: 30 },
+        animate: visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 },
+        transition: { duration: 0.5, ease: "easeOut" as const },
+    };
+}
+
+export function slideInEffect(direction: "left" | "right") {
+    return {
+        initial: { opacity: 0, x: direction === "left" ? -16 : 16 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.4 },
+    };
+}
+
+export function fadeUpEffect(delay = 0, y = 24, duration = 0.6) {
+    return {
+        initial: { opacity: 0, y },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration, delay },
+    };
+}
+
+export const dividerRevealEffect = {
+    initial: { scaleX: 0 },
+    animate: { scaleX: 1 },
+    transition: { duration: 0.7, delay: 0.3 },
+};

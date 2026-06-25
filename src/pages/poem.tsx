@@ -3,8 +3,9 @@ import { Heart, Copy, Check, ArrowLeft, Languages } from "lucide-react";
 import { useLocation } from "wouter";
 import { poems } from "@/data/poems";
 import { useState, useEffect } from "react";
+import { dividerRevealEffect, fadeUpEffect, slideInEffect } from "@/components/services/effects";
+import { useLanguage } from "@/hooks/useLanguage";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguage } from "@/components/services/effects";
 
 export default function PoemPage({ params }: { params: { id: string } }) {
     const poem = poems.find(p => p.id === params.id);
@@ -13,6 +14,11 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     const [copied, setCopied] = useState(false);
     const [selected, setSelected] = useState(false);
     const [language, setLanguage] = useLanguage();
+    const backButtonEffect = slideInEffect("left");
+    const languageToggleEffect = slideInEffect("right");
+    const poemHeaderEffect = fadeUpEffect(0.1);
+    const poemBodyEffect = fadeUpEffect(0.4, 20, 0.7);
+    const actionsEffect = fadeUpEffect(0.6, 16, 0.5);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
@@ -54,9 +60,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                     {/* Back button & Language toggle */}
                     <div className="flex items-center justify-between mb-12">
                         <motion.button
-                            initial={{ opacity: 0, x: -16 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4 }}
+                            {...backButtonEffect}
                             onClick={() => navigate("/")}
                             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
                         >
@@ -66,9 +70,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
 
                         {poem.englishText && (
                             <motion.button
-                                initial={{ opacity: 0, x: 16 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.4 }}
+                                {...languageToggleEffect}
                                 onClick={() => setLanguage(language === "bikol" ? "english" : "bikol")}
                                 className="flex items-center gap-2 px-4 py-2 rounded-xl border border-input text-muted-foreground hover:text-foreground hover:bg-secondary transition-all text-sm font-medium"
                             >
@@ -79,11 +81,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                     </div>
 
                     {/* Poem header */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                    >
+                    <motion.div {...poemHeaderEffect}>
                         {poem.year && (
                             <span className="inline-block text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full font-medium mb-6">
                                 {poem.year}
@@ -105,20 +103,10 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                     </motion.div>
 
                     {/* Divider */}
-                    <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 0.7, delay: 0.3 }}
-                        className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-14 origin-left"
-                    />
+                    <motion.div {...dividerRevealEffect} className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-14 origin-left" />
 
                     {/* Poem body */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.4 }}
-                        className="relative pl-8 border-l-2 border-primary/20"
-                    >
+                    <motion.div {...poemBodyEffect} className="relative pl-8 border-l-2 border-primary/20">
                         <div className="absolute -left-3 -top-3 text-6xl text-primary/10 font-serif leading-none select-none">"</div>
                         <p className="text-xl md:text-2xl font-serif text-foreground/90 leading-[2] whitespace-pre-wrap italic">
                             {language === "english" && poem.englishText ? poem.englishText : poem.text}
@@ -126,12 +114,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                         <div className="absolute -bottom-4 right-0 text-6xl text-primary/10 font-serif leading-none select-none rotate-180">"</div>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-20"
-                    >
+                    <motion.div {...actionsEffect} className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-20">
                         <button
                             onClick={handleCopy}
                             className="flex items-center gap-2 px-6 py-3 rounded-xl border border-input hover:bg-secondary hover:text-secondary-foreground transition-all w-full sm:w-auto justify-center"

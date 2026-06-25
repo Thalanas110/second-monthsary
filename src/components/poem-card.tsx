@@ -1,6 +1,9 @@
 import { Poem } from "@/data/poems";
 import { motion } from "framer-motion";
-import { useInView, useScrolledPast, useLanguage } from "./services/effects";
+import { useInView } from "@/hooks/useInView";
+import { useLanguage } from "@/hooks/useLanguage";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
+import { poemCardRevealEffect } from "./services/effects";
 
 export function PoemCard({ poem, onClick }: { poem: Poem; onClick: () => void }) {
     const [language] = useLanguage();
@@ -14,13 +17,12 @@ export function PoemCard({ poem, onClick }: { poem: Poem; onClick: () => void })
 
     // Visible only when in viewport AND past the hero threshold (mirrors navbar behaviour)
     const visible = inView && scrolledPast;
+    const cardRevealEffect = poemCardRevealEffect(visible);
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 30 }}
-            animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            {...cardRevealEffect}
             whileHover={{ y: -4, scale: 1.01 }}
             className="group relative cursor-pointer flex flex-col justify-between h-full p-6 md:p-8 bg-card rounded-xl border border-card-border shadow-sm hover:shadow-md transition-all duration-300"
             onClick={onClick}

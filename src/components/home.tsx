@@ -1,8 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, Filter, ChevronDown, Languages, Menu, X } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { useScrolledPast } from "@/hooks/useScrolledPast";
 import { useHome } from "./services/home";
-import { useScrolledPast, useLanguage } from "./services/effects";
+import {
+    heroIntroEffect,
+    mobileFiltersDrawerEffect,
+    scrollIndicatorEffect,
+    stickyFilterBarEffect,
+} from "./services/effects";
 import { PoemCard } from "./poem-card";
 import { useLocation } from "wouter";
 
@@ -39,6 +46,7 @@ export function Home() {
 
     // Show the filter bar only after the user scrolls past the hero
     const showFilters = useScrolledPast(300);
+    const filterBarEffect = stickyFilterBarEffect(showFilters);
 
     return (
         <div className="min-h-[100dvh] w-full bg-background selection:bg-primary/20 pb-24">
@@ -58,11 +66,7 @@ export function Home() {
                 </div>
 
                 <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto mt-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                    >
+                    <motion.div {...heroIntroEffect}>
                         <h2 className="font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6" style={{ color: '#d9c9a8' }}>
                             To my dear madame Annah Claire,
                         </h2>
@@ -80,10 +84,7 @@ export function Home() {
                     {!showFilters && (
                         <motion.div
                             key="scroll-indicator"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -8, transition: { duration: 0.4 } }}
-                            transition={{ duration: 0.8, delay: 1.2 }}
+                            {...scrollIndicatorEffect}
                             className="absolute bottom-2 left-0 right-0 flex flex-col items-center gap-1 select-none pointer-events-none z-10"
                         >
                             <span
@@ -112,10 +113,7 @@ export function Home() {
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-12">
                 {/* Filters — mobile-collapsible, desktop-inline */}
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={showFilters ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    style={{ pointerEvents: showFilters ? "auto" : "none" }}
+                    {...filterBarEffect}
                     ref={navbarRef}
                     className={`bg-card/80 border rounded-2xl mb-12 sticky top-4 z-30 overflow-hidden ${
                         showFilters
@@ -207,10 +205,7 @@ export function Home() {
                         {mobileFiltersOpen && (
                             <motion.div
                                 key="mobile-filters"
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                {...mobileFiltersDrawerEffect}
                                 className="md:hidden overflow-hidden"
                             >
                                 <div className="border-t border-card-border px-3 pb-4 pt-3 flex flex-col gap-3">

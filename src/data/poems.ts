@@ -1,7 +1,10 @@
 export type Mood = "Longing" | "Devotion" | "Passion" | "Joy" | "Farewell" | "Reflection";
 
+export type ContentType = "lsm" | "poem";
+
 export interface Poem {
   id: string;
+  type: ContentType[];
   title: string;
   englishTitle?: string;
   poet: string;
@@ -19,6 +22,7 @@ export const poems: Poem[] = [
   // poem 1
   {
     id: "1",
+    type: ["poem"],
     title: "Tesis Pasiring Satoya",
     englishTitle: "Thesis To Us",
     poet: "Adriaan M. Dimate | BSCS 4-A",
@@ -225,9 +229,10 @@ I see the road that led to you.`
   },
   {
     id: "2",
+    type: ["poem"],
     title: "Maski an Signal Magpalya",
     englishTitle: "Even When the Signal Fails",
-    poet: "Adriaan M. Dimate",
+    poet: "Adriaan M. Dimate, BSCS 4-A",
     moods: ["Devotion", "Longing", "Reflection"],
     year: "2026",
     text: `Igwang mga banggi na pano nin uran,

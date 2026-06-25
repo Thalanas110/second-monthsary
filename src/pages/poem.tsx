@@ -155,7 +155,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                                     <p className="text-sm text-foreground/70">{poem.durationLabel ?? "0:00"}</p>
                                 </div>
                             </div>
-                            <audio controls className="w-full" src={poem.audioSrc}>
+                            <audio controls controlsList="nodownload" className="w-full" src={poem.audioSrc}>
                                 Your browser does not support the audio element.
                             </audio>
                         </div>

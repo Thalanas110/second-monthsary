@@ -65,7 +65,7 @@ export function Home() {
                     <div className="absolute bottom-0 inset-x-0 h-[3px] bg-background" />
                 </div>
 
-                <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto mt-20">
+                <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto mt-20 mb-16">
                     <motion.div {...heroIntroEffect}>
                         <h2 className="font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-6" style={{ color: '#d9c9a8' }}>
                             To my dear madame Annah Claire,
@@ -73,7 +73,7 @@ export function Home() {
                         <h1 className="font-serif text-foreground mb-8 drop-shadow-sm" style={{ fontSize: 'clamp(2rem, 7vw, 5.5rem)' }}>
                             Happy 2nd monthsary!
                         </h1>
-                        <p className="text-lg md:text-2xl text-foreground/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg md:text-2xl text-foreground/80 font-serif italic max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
                             I took some time to create this so that you can enjoy reading more poems, ehe
                         </p>
                     </motion.div>
@@ -85,7 +85,7 @@ export function Home() {
                         <motion.div
                             key="scroll-indicator"
                             {...scrollIndicatorEffect}
-                            className="absolute bottom-2 left-0 right-0 flex flex-col items-center gap-1 select-none pointer-events-none z-10"
+                            className="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-1 select-none pointer-events-none z-10"
                         >
                             <span
                                 className="text-xs sm:text-sm font-medium tracking-widest uppercase"

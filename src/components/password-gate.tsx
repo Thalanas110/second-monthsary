@@ -126,7 +126,7 @@ export function PasswordGate({ children }: PasswordGateProps) {
             ♡
           </motion.div>
 
-          <h1 className="gate-title">i love her.</h1>
+          <h1 className="gate-title">I lovee youu soo muchh poo, my madame (^^)</h1>
           <p className="gate-tagline">
             but you'll need to ask me for the password 😊
           </p>

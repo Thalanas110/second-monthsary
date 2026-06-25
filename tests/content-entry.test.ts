@@ -8,6 +8,7 @@ import {
     getLocalizedBody,
     getLocalizedTitle,
     getTypeLabel,
+    getVoicemailSections,
 } from "../src/lib/content-entry.ts";
 
 const poemEntry: ArchiveEntry = {
@@ -39,7 +40,28 @@ const voicemailEntry: ArchiveEntry = {
     text: "search copy of transcript",
     transcript: "voice paragraph one\n\nvoice paragraph two",
     audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "0:01",
+    durationLabel: "5:41",
+};
+
+const songVoicemailEntry: ArchiveEntry = {
+    id: "v-song",
+    type: "voicemail",
+    title: "Song Voice",
+    poet: "Test Poet",
+    moods: ["Joy"],
+    voicemailStyle: "song",
+    text: "Verse 1\n\nline one\nline two",
+    transcript: `Verse 1
+
+line one
+line two
+
+Chorus
+
+line three
+line four`,
+    audioSrc: "/audio/song.wav",
+    durationLabel: "1:23",
 };
 
 test("localized title prefers english when present", () => {
@@ -63,6 +85,13 @@ test("voicemail body and copy text come from transcript", () => {
 test("display paragraphs split prose and transcript content on blank lines", () => {
     assert.deepEqual(getDisplayParagraphs(lsmEntry, "bikol"), ["paragraph one", "paragraph two", "paragraph three"]);
     assert.deepEqual(getDisplayParagraphs(voicemailEntry, "bikol"), ["voice paragraph one", "voice paragraph two"]);
+});
+
+test("song-style voicemail entries are grouped into labeled lyric sections", () => {
+    assert.deepEqual(getVoicemailSections(songVoicemailEntry, "bikol"), [
+        { label: "Verse 1", stanzas: ["line one\nline two"] },
+        { label: "Chorus", stanzas: ["line three\nline four"] },
+    ]);
 });
 
 test("type labels stay presentation-ready", () => {

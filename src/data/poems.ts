@@ -15,6 +15,7 @@ export interface ArchiveEntry {
   audioSrc?: string;
   transcript?: string;
   durationLabel?: string;
+  voicemailStyle?: "standard" | "song";
 }
 
 export type Poem = ArchiveEntry;
@@ -237,7 +238,7 @@ I see the road that led to you.`
     type: "poem",
     title: "Maski an Signal Magpalya",
     englishTitle: "Even When the Signal Fails",
-    poet: "Adriaan M. Dimate, BSCS 4-A",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Longing", "Reflection"],
     year: "2026",
     text: `Igwang mga banggi na pano nin uran,
@@ -587,7 +588,7 @@ There we two, content, happy in being together, speaking little, perhaps not a w
     type: "voicemail",
     title: "First Voicemail Placeholder",
     englishTitle: "First Voicemail Placeholder",
-    poet: "Adriaan M. Dimate",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Reflection"],
     year: "2026",
     text: `This transcript is a placeholder while the real voicemail is still being prepared.
@@ -600,26 +601,318 @@ It exists so the voicemail card, transcript layout, search behavior, and copy ac
 
 It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
     audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "0:01",
+    durationLabel: "5:41",
   },
   {
     id: "10",
     type: "voicemail",
-    title: "Second Voicemail Placeholder",
-    englishTitle: "Second Voicemail Placeholder",
-    poet: "Adriaan M. Dimate",
+    title: "From Strangers to Us",
+    englishTitle: "From Strangers to Us",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Longing", "Joy"],
     year: "2026",
-    text: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+    voicemailStyle: "song",
+    text: `Verse 1 - The Introduction (May 6)
 
-Once the real audio exists, only the metadata and text need to change.`,
-    englishText: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+  A quiet message crossed my way,
+  A name I'd never thought I'd say.
+  No fireworks lit the evening sky,
+  Just one small chance that wandered by.
 
-Once the real audio exists, only the metadata and text need to change.`,
-    transcript: `This second placeholder keeps the voicemail layout path exercised while the real recording is still pending.
+  I didn't know what time would write,
+  Or how you'd slowly change my life.
+  One simple "meet her" changed the page,
+  Beginning our unwritten stage.
 
-Once the real audio exists, only the metadata and text need to change.`,
-    audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "0:01",
+  Pre-Chorus
+
+  Who would've known
+  A single hello
+  Would become the place
+  I'd always call home?
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Verse 2 - Finally Talking (May 15)
+
+  The words grew longer every night,
+  The hours somehow felt too light.
+  We laughed through stories, fears, and dreams,
+  Like finding calm in rushing streams.
+
+  The distance never felt so wide,
+  Whenever you were by my side.
+  Screen to screen, yet heart to heart,
+  You slowly became my favorite part.
+
+  Verse 3 - Courtship (May 20-27)
+
+  I asked with hope, but trembling still,
+  Not knowing what your heart would feel.
+  Each passing day became a prayer,
+  Wondering if love was waiting there.
+
+  Then finally your answer came,
+  Forever changing everything.
+  No grand parade, no crowded room—
+  Just joy that filled my quiet room.
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Bridge - The Storms
+
+  Accounts disappeared,
+  The distance remained.
+  Some days were confusing,
+  Some nights filled with rain.
+
+  But none of the battles
+  Could make me let go.
+  Because loving you
+  Is the easiest thing I know.
+
+  Final Chorus
+
+  From May until this very day,
+  You've painted colors through the gray.
+  The story's only just begun,
+  Our brightest chapter's yet to come.
+
+  No matter where tomorrow leads,
+  Or how long this long distance will be,
+  When every mile is finally gone,
+  I'll still be singing our first song.
+
+  Outro
+
+  "Hey... I'd like you to meet someone."
+
+  And somehow...
+
+  It became,
+
+  "I love you, my madame."`,
+    englishText: `Verse 1 - The Introduction (May 6)
+
+  A quiet message crossed my way,
+  A name I'd never thought I'd say.
+  No fireworks lit the evening sky,
+  Just one small chance that wandered by.
+
+  I didn't know what time would write,
+  Or how you'd slowly change my life.
+  One simple "meet her" changed the page,
+  Beginning our unwritten stage.
+
+  Pre-Chorus
+
+  Who would've known
+  A single hello
+  Would become the place
+  I'd always call home?
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Verse 2 - Finally Talking (May 15)
+
+  The words grew longer every night,
+  The hours somehow felt too light.
+  We laughed through stories, fears, and dreams,
+  Like finding calm in rushing streams.
+
+  The distance never felt so wide,
+  Whenever you were by my side.
+  Screen to screen, yet heart to heart,
+  You slowly became my favorite part.
+
+  Verse 3 - Courtship (May 20-27)
+
+  I asked with hope, but trembling still,
+  Not knowing what your heart would feel.
+  Each passing day became a prayer,
+  Wondering if love was waiting there.
+
+  Then finally your answer came,
+  Forever changing everything.
+  No grand parade, no crowded room—
+  Just joy that filled my quiet room.
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Bridge - The Storms
+
+  Accounts disappeared,
+  The distance remained.
+  Some days were confusing,
+  Some nights filled with rain.
+
+  But none of the battles
+  Could make me let go.
+  Because loving you
+  Is the easiest thing I know.
+
+  Final Chorus
+
+  From May until this very day,
+  You've painted colors through the gray.
+  The story's only just begun,
+  Our brightest chapter's yet to come.
+
+  No matter where tomorrow leads,
+  Or how long this long distance will be,
+  When every mile is finally gone,
+  I'll still be singing our first song.
+
+  Outro
+
+  "Hey... I'd like you to meet someone."
+
+  And somehow...
+
+  It became,
+
+  "I love you, my madame."`,
+    transcript: `Verse 1 - The Introduction (May 6)
+
+  A quiet message crossed my way,
+  A name I'd never thought I'd say.
+  No fireworks lit the evening sky,
+  Just one small chance that wandered by.
+
+  I didn't know what time would write,
+  Or how you'd slowly change my life.
+  One simple "meet her" changed the page,
+  Beginning our unwritten stage.
+
+  Pre-Chorus
+
+  Who would've known
+  A single hello
+  Would become the place
+  I'd always call home?
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Verse 2 - Finally Talking (May 15)
+
+  The words grew longer every night,
+  The hours somehow felt too light.
+  We laughed through stories, fears, and dreams,
+  Like finding calm in rushing streams.
+
+  The distance never felt so wide,
+  Whenever you were by my side.
+  Screen to screen, yet heart to heart,
+  You slowly became my favorite part.
+
+  Verse 3 - Courtship (May 20-27)
+
+  I asked with hope, but trembling still,
+  Not knowing what your heart would feel.
+  Each passing day became a prayer,
+  Wondering if love was waiting there.
+
+  Then finally your answer came,
+  Forever changing everything.
+  No grand parade, no crowded room—
+  Just joy that filled my quiet room.
+
+  Chorus
+
+  From strangers into something true,
+  One little step led me to you.
+  Through every silence, every mile,
+  You gave my weary heart a smile.
+
+  Now every dream I hold feels new,
+  Because I get to dream with you.
+  From that first day until today,
+  I'll choose your hand every single day.
+
+  Bridge - The Storms
+
+  Accounts disappeared,
+  The distance remained.
+  Some days were confusing,
+  Some nights filled with rain.
+
+  But none of the battles
+  Could make me let go.
+  Because loving you
+  Is the easiest thing I know.
+
+  Final Chorus
+
+  From May until this very day,
+  You've painted colors through the gray.
+  The story's only just begun,
+  Our brightest chapter's yet to come.
+
+  No matter where tomorrow leads,
+  Or how long this long distance will be,
+  When every mile is finally gone,
+  I'll still be singing our first song.
+
+  Outro
+
+  "Hey... I'd like you to meet someone."
+
+  And somehow...
+
+  It became,
+
+  "I love you, my madame."`,
+    audioSrc: "/audio/From Strangers to Us v3.mp3",
+    durationLabel: "5:41",
   }
 ];

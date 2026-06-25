@@ -2,6 +2,14 @@ import type { ArchiveEntry } from "../data/poems.ts";
 
 export type Language = "bikol" | "english";
 
+export interface VoicemailSection {
+    label?: string;
+    stanzas: string[];
+}
+
+const voicemailSongLabelPattern =
+    /^(verse(?:\s+\d+)?(?:\s*-\s*.+)?|pre-chorus|chorus|final chorus|bridge(?:\s*-\s*.+)?|outro|intro)$/i;
+
 export function getLocalizedTitle(entry: ArchiveEntry, language: Language) {
     return language === "english" && entry.englishTitle ? entry.englishTitle : entry.title;
 }
@@ -19,6 +27,31 @@ export function getDisplayParagraphs(entry: ArchiveEntry, language: Language) {
         .split(/\n\s*\n/)
         .map((paragraph) => paragraph.trim())
         .filter(Boolean);
+}
+
+export function getVoicemailSections(entry: ArchiveEntry, language: Language) {
+    const paragraphs = getDisplayParagraphs(entry, language);
+    const sections: VoicemailSection[] = [];
+    let currentSection: VoicemailSection | null = null;
+
+    for (const paragraph of paragraphs) {
+        const trimmedParagraph = paragraph.trim();
+
+        if (entry.voicemailStyle === "song" && voicemailSongLabelPattern.test(trimmedParagraph)) {
+            currentSection = { label: trimmedParagraph, stanzas: [] };
+            sections.push(currentSection);
+            continue;
+        }
+
+        if (!currentSection || entry.voicemailStyle !== "song") {
+            currentSection = { stanzas: [] };
+            sections.push(currentSection);
+        }
+
+        currentSection.stanzas.push(trimmedParagraph);
+    }
+
+    return sections.filter((section) => section.label || section.stanzas.length > 0);
 }
 
 export function getEntryPreview(entry: ArchiveEntry, language: Language) {

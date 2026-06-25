@@ -31,3 +31,13 @@ test("voicemail entries have transcript and audio metadata", () => {
         assert.ok(entry.text.includes(entry.transcript), `${entry.id} should keep transcript searchable through text`);
     }
 });
+
+test("Adriaan-authored entries use one consistent section suffix", () => {
+    const adriaanEntries = poems.filter((entry) => entry.poet.includes("Adriaan M. Dimate"));
+
+    assert.ok(adriaanEntries.length >= 4);
+
+    for (const entry of adriaanEntries) {
+        assert.equal(entry.poet, "Adriaan M. Dimate | BSCS 4-A");
+    }
+});

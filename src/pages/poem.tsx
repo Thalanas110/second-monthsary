@@ -11,6 +11,7 @@ import {
     getDisplayParagraphs,
     getLocalizedTitle,
     getTypeLabel,
+    getVoicemailSections,
 } from "@/lib/content-entry";
 
 export default function PoemPage({ params }: { params: { id: string } }) {
@@ -48,6 +49,8 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     }
 
     const paragraphs = getDisplayParagraphs(poem, language);
+    const isSongVoicemail = poem.type === "voicemail" && poem.voicemailStyle === "song";
+    const songSections = isSongVoicemail ? getVoicemailSections(poem, language) : [];
     const copyLabel = poem.type === "voicemail" ? "Copy transcript" : "Copy verse";
 
     const handleCopy = async () => {
@@ -157,13 +160,49 @@ export default function PoemPage({ params }: { params: { id: string } }) {
                             </audio>
                         </div>
 
-                        <div className="rounded-3xl border border-primary/10 bg-card/85 p-6 md:p-8 space-y-5">
-                            {paragraphs.map((paragraph, index) => (
-                                <p key={index} className="text-[1.02rem] md:text-[1.08rem] text-foreground/90 leading-8 whitespace-pre-wrap">
-                                    {paragraph}
-                                </p>
-                            ))}
-                        </div>
+                        {isSongVoicemail ? (
+                            <div className="space-y-5">
+                                {songSections.map((section, index) => {
+                                    return (
+                                        <section
+                                            key={`${section.label ?? "section"}-${index}`}
+                                            className="relative overflow-hidden rounded-[2rem] border border-primary/10 bg-card/84 p-6 backdrop-blur-sm md:p-8"
+                                        >
+                                            <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+                                            {section.label && (
+                                                <div className="mb-5 flex items-center gap-4">
+                                                    <span className="h-px flex-1 bg-primary/15" />
+                                                    <p className="text-center text-[0.68rem] uppercase tracking-[0.38em] text-primary/75 md:text-[0.72rem]">
+                                                        {section.label}
+                                                    </p>
+                                                    <span className="h-px flex-1 bg-primary/15" />
+                                                </div>
+                                            )}
+
+                                            <div className="space-y-4">
+                                                {section.stanzas.map((stanza, stanzaIndex) => (
+                                                    <p
+                                                        key={`${section.label ?? "stanza"}-${stanzaIndex}`}
+                                                        className="mx-auto max-w-2xl whitespace-pre-wrap text-center font-serif text-[1.02rem] leading-8 text-foreground/88 md:text-[1.12rem] md:leading-9"
+                                                    >
+                                                        {stanza}
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        </section>
+                                    );
+                                })}
+                            </div>
+                        ) : (
+                            <div className="rounded-3xl border border-primary/10 bg-card/85 p-6 md:p-8 space-y-5">
+                                {paragraphs.map((paragraph, index) => (
+                                    <p key={index} className="text-[1.02rem] md:text-[1.08rem] text-foreground/90 leading-8 whitespace-pre-wrap">
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
+                        )}
                     </motion.div>
                 )}
 

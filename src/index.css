@@ -208,3 +208,211 @@
     pointer-events: none;
   }
 }
+
+/* ============================================================
+   PASSWORD GATE
+   ============================================================ */
+
+.password-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--background));
+  overflow: hidden;
+}
+
+/* Animated ambient blobs */
+.gate-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: gate-float 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.gate-blob--1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, hsl(345 60% 55%), transparent 70%);
+  top: -120px;
+  left: -120px;
+  animation-delay: 0s;
+}
+
+.gate-blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, hsl(40 60% 60%), transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  animation-delay: -5s;
+  animation-duration: 15s;
+}
+
+.gate-blob--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, hsl(345 40% 40%), transparent 70%);
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -9s;
+  animation-duration: 18s;
+}
+
+@keyframes gate-float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 30px) scale(1.08); }
+}
+
+/* Card */
+.gate-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: min(420px, calc(100vw - 2.5rem));
+  padding: 3rem 2.5rem 2.5rem;
+  background: color-mix(in srgb, hsl(var(--card)) 85%, transparent);
+  border: 1px solid color-mix(in srgb, hsl(var(--primary)) 18%, hsl(var(--border)));
+  border-radius: 1.25rem;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, hsl(var(--primary)) 8%, transparent),
+    0 8px 32px color-mix(in srgb, hsl(var(--primary)) 10%, transparent),
+    0 32px 80px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Lock icon */
+.gate-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, hsl(var(--primary)) 12%, hsl(var(--card)));
+  border: 1px solid color-mix(in srgb, hsl(var(--primary)) 25%, transparent);
+  color: hsl(var(--primary));
+  margin-bottom: 0.25rem;
+}
+
+.gate-lock-icon {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+
+/* Title & subtitle */
+.gate-title {
+  font-family: var(--app-font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  margin: 0;
+  text-align: center;
+}
+
+.gate-subtitle {
+  font-size: 0.95rem;
+  color: hsl(var(--muted-foreground));
+  margin: -0.5rem 0 0;
+  text-align: center;
+}
+
+/* Input */
+.gate-input-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gate-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: hsl(var(--background));
+  border: 1.5px solid hsl(var(--border));
+  border-radius: 0.625rem;
+  color: hsl(var(--foreground));
+  font-family: var(--app-font-sans);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.gate-input::placeholder {
+  letter-spacing: 0;
+  color: hsl(var(--muted-foreground));
+  opacity: 0.7;
+}
+
+.gate-input:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px color-mix(in srgb, hsl(var(--primary)) 18%, transparent);
+}
+
+.gate-input--error {
+  border-color: hsl(var(--destructive));
+  box-shadow: 0 0 0 3px color-mix(in srgb, hsl(var(--destructive)) 15%, transparent);
+}
+
+.gate-input--error:focus {
+  border-color: hsl(var(--destructive));
+  box-shadow: 0 0 0 3px color-mix(in srgb, hsl(var(--destructive)) 20%, transparent);
+}
+
+.gate-error {
+  font-size: 0.82rem;
+  color: hsl(var(--destructive));
+  margin: 0;
+  padding-left: 0.25rem;
+}
+
+/* Submit button */
+.gate-btn {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-family: var(--app-font-sans);
+  font-size: 0.975rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--primary-border);
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+}
+
+.gate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.gate-btn-spinner {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid color-mix(in srgb, hsl(var(--primary-foreground)) 35%, transparent);
+  border-top-color: hsl(var(--primary-foreground));
+  border-radius: 50%;
+  animation: gate-spin 0.65s linear infinite;
+}
+
+@keyframes gate-spin {
+  to { transform: rotate(360deg); }
+}

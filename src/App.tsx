@@ -6,6 +6,7 @@ import { Home } from "./components/home";
 import NotFound from "./pages/not-found";
 import PoemPage from "./pages/poem";
 import { motion, AnimatePresence } from "framer-motion";
+import { PasswordGate } from "./components/password-gate";
 
 const queryClient = new QueryClient();
 const versaillesImg = "/versailles style.png";
@@ -58,15 +59,17 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <AmbientBackground />
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <PasswordGate>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <AmbientBackground />
+            <Router />
+          </WouterRouter>
+          <Toaster />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </PasswordGate>
   );
 }
 

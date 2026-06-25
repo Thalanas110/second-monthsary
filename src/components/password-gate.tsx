@@ -38,6 +38,7 @@ export function PasswordGate({ children }: PasswordGateProps) {
   const [error, setError] = useState<boolean>(false);
   const [shaking, setShaking] = useState<boolean>(false);
   const [checking, setChecking] = useState<boolean>(false);
+  const [showInput, setShowInput] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -48,10 +49,10 @@ export function PasswordGate({ children }: PasswordGateProps) {
   }, []);
 
   useEffect(() => {
-    if (ready && !unlocked) {
-      setTimeout(() => inputRef.current?.focus(), 400);
+    if (showInput) {
+      setTimeout(() => inputRef.current?.focus(), 150);
     }
-  }, [ready, unlocked]);
+  }, [showInput]);
 
   const handleSubmit = useCallback(async () => {
     if (checking || value.trim() === "") return;
@@ -97,91 +98,122 @@ export function PasswordGate({ children }: PasswordGateProps) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
       >
+        {/* Animated ambient blobs */}
         <div className="gate-blob gate-blob--1" />
         <div className="gate-blob gate-blob--2" />
         <div className="gate-blob gate-blob--3" />
 
+        {/* Floating petals */}
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className={`gate-petal gate-petal--${i + 1}`} aria-hidden="true">
+            ✿
+          </div>
+        ))}
+
         <motion.div
           className="gate-card"
-          initial={{ opacity: 0, y: 32, scale: 0.96 }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         >
+          {/* Heart / love emoji */}
           <motion.div
-            className="gate-icon-wrap"
-            animate={shaking ? { x: [-6, 6, -5, 5, -3, 3, 0] } : { x: 0 }}
-            transition={{ duration: 0.45 }}
+            className="gate-heart"
+            animate={{ scale: [1, 1.12, 1] }}
+            transition={{ duration: 2.2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+            aria-hidden="true"
           >
-            <svg
-              className="gate-lock-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
-              <path
-                d="M7 11V7a5 5 0 0 1 10 0v4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <circle cx="12" cy="16" r="1.5" fill="currentColor" />
-            </svg>
+            ♡
           </motion.div>
 
-          <h1 className="gate-title">Private Site</h1>
-          <p className="gate-subtitle">Enter the password to continue</p>
+          <h1 className="gate-title">i love her.</h1>
+          <p className="gate-tagline">
+            but you'll need to ask me for the password 😊
+          </p>
 
-          <div className="gate-input-wrap">
-            <motion.input
-              ref={inputRef}
-              id="site-password-input"
-              type="password"
-              className={`gate-input${error ? " gate-input--error" : ""}`}
-              placeholder="Password"
-              value={value}
-              onChange={(e) => {
-                setValue(e.target.value);
-                if (error) setError(false);
-              }}
-              onKeyDown={handleKeyDown}
-              autoComplete="off"
-              spellCheck={false}
-              aria-label="Site password"
-              aria-invalid={error}
-              aria-describedby={error ? "gate-error-msg" : undefined}
-              disabled={checking}
-            />
-            {error && (
-              <motion.p
-                id="gate-error-msg"
-                className="gate-error"
-                initial={{ opacity: 0, y: -4 }}
+          <div className="gate-divider" aria-hidden="true" />
+
+          <AnimatePresence mode="wait">
+            {!showInput ? (
+              <motion.button
+                key="ask-btn"
+                type="button"
+                className="gate-ask-btn"
+                onClick={() => setShowInput(true)}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-                role="alert"
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                Incorrect password. Try again.
-              </motion.p>
-            )}
-          </div>
-
-          <motion.button
-            type="button"
-            className="gate-btn"
-            onClick={handleSubmit}
-            disabled={checking || value.trim() === ""}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
-          >
-            {checking ? (
-              <span className="gate-btn-spinner" aria-label="Verifying" />
+                i have the password
+              </motion.button>
             ) : (
-              "Enter"
+              <motion.div
+                key="input-section"
+                className="gate-input-section"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div
+                  animate={shaking ? { x: [-6, 6, -5, 5, -3, 3, 0] } : { x: 0 }}
+                  transition={{ duration: 0.45 }}
+                  className="gate-input-wrap"
+                >
+                  <input
+                    ref={inputRef}
+                    id="site-password-input"
+                    type="password"
+                    className={`gate-input${error ? " gate-input--error" : ""}`}
+                    placeholder="enter the password…"
+                    value={value}
+                    onChange={(e) => {
+                      setValue(e.target.value);
+                      if (error) setError(false);
+                    }}
+                    onKeyDown={handleKeyDown}
+                    autoComplete="off"
+                    spellCheck={false}
+                    aria-label="Site password"
+                    aria-invalid={error}
+                    aria-describedby={error ? "gate-error-msg" : undefined}
+                    disabled={checking}
+                  />
+                  {error && (
+                    <motion.p
+                      id="gate-error-msg"
+                      className="gate-error"
+                      initial={{ opacity: 0, y: -4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                      role="alert"
+                    >
+                      nope, that's not it 🙈
+                    </motion.p>
+                  )}
+                </motion.div>
+
+                <motion.button
+                  type="button"
+                  className="gate-btn"
+                  onClick={handleSubmit}
+                  disabled={checking || value.trim() === ""}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  {checking ? (
+                    <span className="gate-btn-spinner" aria-label="Verifying" />
+                  ) : (
+                    "let me in ♡"
+                  )}
+                </motion.button>
+              </motion.div>
             )}
-          </motion.button>
+          </AnimatePresence>
         </motion.div>
       </motion.div>
     </AnimatePresence>

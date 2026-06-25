@@ -203,7 +203,7 @@ It exists so the voicemail card, transcript layout, search behavior, and copy ac
 
 It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
   audioSrc: "/audio/voicemail-placeholder.wav",
-  durationLabel: "5:41",
+  durationLabel: "4:42",
 },
 {
   id: "10",
@@ -223,7 +223,7 @@ Once the real audio exists, only the metadata and text need to change.`,
 
 Once the real audio exists, only the metadata and text need to change.`,
   audioSrc: "/audio/voicemail-placeholder.wav",
-  durationLabel: "5:41",
+  durationLabel: "4:42",
 },
 ```
 
@@ -295,7 +295,7 @@ const voicemailEntry: ArchiveEntry = {
   text: "search copy of transcript",
   transcript: "voice paragraph one\\n\\nvoice paragraph two",
   audioSrc: "/audio/voicemail-placeholder.wav",
-  durationLabel: "5:41",
+  durationLabel: "4:42",
 };
 
 test("localized title prefers english when present", () => {

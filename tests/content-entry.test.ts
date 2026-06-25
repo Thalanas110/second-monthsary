@@ -40,7 +40,7 @@ const voicemailEntry: ArchiveEntry = {
     text: "search copy of transcript",
     transcript: "voice paragraph one\n\nvoice paragraph two",
     audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "5:41",
+    durationLabel: "4:42",
 };
 
 const songVoicemailEntry: ArchiveEntry = {

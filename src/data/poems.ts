@@ -445,6 +445,7 @@ Let every wave repeat one answer:
           And I will stay.
           With thee.`
   },
+  // placeholders only, will be replaced 
   {
     id: "3",
     type: "poem",
@@ -469,6 +470,7 @@ With my lost saints. I love thee with the breath,
 Smiles, tears, of all my life; and, if God choose,
 I shall but love thee better after death.`
   },
+  // placeholders only, will be replaced
   {
     id: "4",
     type: "poem",
@@ -601,7 +603,7 @@ It exists so the voicemail card, transcript layout, search behavior, and copy ac
 
 It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
     audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "5:41",
+    durationLabel: "4:42",
   },
   {
     id: "10",
@@ -912,7 +914,7 @@ It exists so the voicemail card, transcript layout, search behavior, and copy ac
   It became,
 
   "I love you, my madame."`,
-    audioSrc: "/audio/From Strangers to Us v3.mp3",
-    durationLabel: "5:41",
+    audioSrc: "/audio/From Strangers to Us v2.mp3",
+    durationLabel: "4:42",
   }
 ];

@@ -588,22 +588,95 @@ There we two, content, happy in being together, speaking little, perhaps not a w
   {
     id: "9",
     type: "voicemail",
-    title: "First Voicemail Placeholder",
-    englishTitle: "First Voicemail Placeholder",
-    poet: "Adriaan M. Dimate | BSCS 4-A",
-    moods: ["Devotion", "Reflection"],
-    year: "2026",
-    text: `This transcript is a placeholder while the real voicemail is still being prepared.
+    title: "I Want to Write You a Song",
+    poet: "One Direction (sang by me for this renditon)",
+    moods: ["Devotion", "Longing", "Joy"],
+    year: "2013",
+    text: `[Verse 1: Harry, Liam]
+I wanna write you a song
+One as beautiful as you are sweet
+With just a hint of pain
+For the feeling that I get when you are gone
 
-It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
-    englishText: `This transcript is a placeholder while the real voicemail is still being prepared.
+I wanna write you a song
+I wanna lend you my coat
+One that's as soft as your cheek
+So when the world is cold
+You will have a hiding place you can go
+I wanna lend you my coat
 
-It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
-    transcript: `This transcript is a placeholder while the real voicemail is still being prepared.
+[Chorus: Louis, Louis & Liam]
+Ooh, everything I need I get from you
+Ooh, and giving back is all I wanna do
 
-It exists so the voicemail card, transcript layout, search behavior, and copy action can all be wired now.`,
-    audioSrc: "/audio/voicemail-placeholder.wav",
-    durationLabel: "4:42",
+[Verse 2: Liam]
+I wanna build you a boat
+One as strong as you are free
+So any time you think
+That your heart is gonna sink, you know it won't
+I wanna build you a boat
+
+[Chorus: Louis, Louis & Liam]
+Ooh, everything I need I get from you
+Ooh, and giving back is all I wanna do, ooh
+
+[Instrumental Bridge]
+
+[Chorus: Harry, Harry & Liam]
+Ooh, everything I need I get from you
+Ooh, giving back is all I wanna do, ooh
+
+[Outro: Niall]
+I wanna write you a song
+One to make your heart remember me
+So any time I'm gone
+You can listen to my voice and sing along
+I wanna write you a song
+I wanna write you a song`,
+    englishText: `[Verse 1: Harry, Liam]
+I wanna write you a song
+One as beautiful as you are sweet
+With just a hint of pain
+
+For the feeling that I get when you are gone
+I wanna write you a song
+I wanna lend you my coat
+One that's as soft as your cheek
+So when the world is cold
+You will have a hiding place you can go
+I wanna lend you my coat
+
+[Chorus: Louis, Louis & Liam]
+Ooh, everything I need I get from you
+Ooh, and giving back is all I wanna do
+
+[Verse 2: Liam]
+I wanna build you a boat
+One as strong as you are free
+So any time you think
+That your heart is gonna sink, you know it won't
+I wanna build you a boat
+
+[Chorus: Louis, Louis & Liam]
+Ooh, everything I need I get from you
+Ooh, and giving back is all I wanna do, ooh
+
+[Instrumental Bridge]
+
+[Chorus: Harry, Harry & Liam]
+Ooh, everything I need I get from you
+Ooh, giving back is all I wanna do, ooh
+
+[Outro: Niall]
+I wanna write you a song
+One to make your heart remember me
+So any time I'm gone
+You can listen to my voice and sing along
+I wanna write you a song
+I wanna write you a song`
+,
+    audioSrc: "/audio/From Strangers to Us v2.mp3",
+    durationLabel: "3:01",
   },
   {
     id: "10",

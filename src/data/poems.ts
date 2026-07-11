@@ -449,26 +449,130 @@ Let every wave repeat one answer:
   {
     id: "3",
     type: "poem",
-    title: "[Bikolano title for Sonnet 43 goes here]",
-    englishTitle: "How Do I Love Thee? (Sonnet 43)",
-    poet: "Elizabeth Barrett Browning",
+    title: "Kun an Rayo an Naghuhugas kan mga Pinggan",
+    englishTitle: "When Distance Washes the Dishes",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Passion"],
-    year: "1850",
-    text: `[Bikolano translation for Sonnet 43 goes here]`,
-    englishText: `How do I love thee? Let me count the ways.
-I love thee to the depth and breadth and height
-My soul can reach, when feeling out of sight
-For the ends of being and ideal grace.
-I love thee to the level of every day's
-Most quiet need, by sun and candle-light.
-I love thee freely, as men strive for right;
-I love thee purely, as they turn from praise.
-I love thee with the passion put to use
-In my old griefs, and with my childhood's faith.
-I love thee with a love I seemed to lose
-With my lost saints. I love thee with the breath,
-Smiles, tears, of all my life; and, if God choose,
-I shall but love thee better after death.`
+    year: "2026",
+    text: `May mga banggi na pinagmamawot ko,
+    Na sa saimo kamot ko makaabot;
+    Tanganing pasan mo ako mapagian,
+    Asin mabantayan an puso mong mahal.
+    
+    Aram kong may aga na magabat sana,
+    Asin silensyo halabaon na marhay,
+    Gabos na gibobon sarong padusa man,
+    Pero tinindogan ta aram mo kaya.
+    
+    Kun pwede lang ako sa pinto kumatok,
+    Riribayan ko nin ginhawa su kulogl
+    Ako na mahugas mga pinggan diyan,
+    O makisayaw sa pagbuhos nin uran.
+    
+    Masighind ako bago pa maglakaw ka,
+    Magluto kakanon bago pa dumiklom,
+    Dahrahon an gabat kan saimong pasan
+    Asin ako an saimong hangaloan.
+    
+    Pasabi ako na, "Mahal, tama na yan,
+    Magtukaw digdi asin maoaghinalo.",
+    Mahagad man nanggad an kinaban bukas,
+    Pero sa kugos ko may katoninongan.
+    
+    Alagad nguyan pangadyi lang an yaon,
+    Asin taramon na nagbabalyo banggi;
+    Dai ta ka makaptan pag naghihibi,
+    Pero aram nin langit mahigot ako.
+    
+    Kaya mahalat na warang pagreklamo,
+    Kundi may pusong handang magtios ngunyan;
+    Ta sa bawat aga na minalabas lang,
+    Harani kita sa pangakong totoo.
+
+    Sa sarong aldaw daing iskrin sa tawa,
+    Warang rayo na mahabon nin minuto;
+    Daing takot sa matoninong na banggi,
+    Daing luha ta uya na ako digdi.
+
+    Sa sirong nin sarong bubong mamata man,
+    Mahiling an harong sa hiyom ta ngunyan;
+    Magibo nin buhay sa bawat sandali—
+    Pagkamuot na matoninong, mararom.
+
+    Asin kun dumatong an aldaw na iyan,
+    Bagyong inagihan magsasabi na lang:
+    Na bakong daing hirap an pagkamuot,
+    Kundi pagpili dawa na naluluya.
+
+    Sagkod na mahiling kitang mangingisi,
+    Malakaw sa gilid minsan marayo man.
+    Ta an rayo sukol lang nin satong dalan—
+    Dai nasusukol pagkamuot ko man.
+
+    Kaya sa monthsary uya ining sumpa:
+    Mahalat may paglaom sa mga bagyo.
+    Asin pag an satong paghalat tapos na,
+    Kita mag-iba sa katoninongan na.`,
+
+    englishText: `There are nights I wish these hands could reach
+Beyond the miles that keep us two apart;
+To lift the weight your weary shoulders bear,
+And gently guard your fragile, faithful heart.
+
+I know there are mornings left too heavy,
+Where silence lingers longer than it should;
+Where every chore becomes another burden,
+Yet still you stand because you know you could.
+
+If only I could knock upon your doorway,
+I'd gladly trade my comfort for your pain;
+I'd wash the dishes waiting by the sink,
+Or dance with you beneath the pouring rain.
+
+I'd sweep the floor before your footsteps found it,
+Prepare our meal before the daylight ends;
+Carry the bags too heavy for your shoulders,
+And be the quiet place your spirit mends.
+
+I'd tell you softly, "Love, you've done enough now.
+Come sit with me and let your worries cease."
+The world may ask so much from your tomorrow,
+But in my arms you'd only have your peace.
+
+Yet all I have today are whispered prayers,
+And words that cross the distance every night;
+I cannot hold your hand when tears are falling,
+But Heaven knows I'm holding on with might.
+
+So I will wait—not with reluctant patience,
+But with a heart determined to endure;
+For every dawn that passes brings us closer
+To all the promises our love keeps sure.
+
+One day there'll be no screens between our laughter,
+No miles to steal the moments that we share;
+No fear to shadow simple, quiet evenings,
+No lonely tears because I wasn't there.
+
+Instead, we'll wake beneath the selfsame rooftop,
+Where home is found in every smile we keep;
+We'll build a life from countless little moments—
+The kind of love that lingers calm and deep.
+
+And when that day arrives, my dearest darling,
+The storms we've crossed will only tell our tale:
+That love is not the absence of all hardship,
+But choosing still, when everything seems frail.
+
+Until that morning finally finds us smiling,
+I'll walk beside you, though from far away.
+For distance only measures roads between us—
+It never measures how my heart will stay.
+
+So on this monthsary, hear my solemn promise:
+I'll wait with hope through every passing weather.
+And when the waiting writes its final chapter,
+We'll live our quiet ever after—together.`
   },
   // placeholders only, will be replaced
   {

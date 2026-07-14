@@ -893,20 +893,159 @@ But growing old, together, finally home.`
   {
     id: "6",
     type: "poem",
-    title: "[Bikolano title for He Wishes for the Cloths of Heaven goes here]",
-    englishTitle: "He Wishes for the Cloths of Heaven",
-    poet: "W. B. Yeats",
+    title: "Kun Nahanap Taka Kuta Kasuodma",
+    englishTitle: "If Only I Had Found You Sooner",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Longing"],
     year: "1899",
-    text: `[Bikolano translation for He Wishes for the Cloths of Heaven goes here]`,
-    englishText: `Had I the heavens' embroidered cloths,
-Enwrought with golden and silver light,
-The blue and the dim and the dark cloths
-Of night and light and the half light,
-I would spread the cloths under your feet:
-But I, being poor, have only my dreams;
-I have spread my dreams under your feet;
-Tread softly because you tread on my dreams.`
+    text: `Minsan mawot kong nagkabisto tang amay,
+Bago an kinaban naghagad nin labi.
+Tibaad igwa pang rason na mangisi,
+Kamot na makusog sa lambang pag-agi.
+
+Patawad kun ako uminabot huri.
+Puso mo may darang gabat kasuodma.
+Dai maribayan pahinang nawalat,
+Alagad tatabangan kang magsurat man.
+
+Patawad sa rayo na nagsuhay sato.
+May aldaw na mawot ko sanang dumaan.
+Matukaw sa taed kan saimong puso,
+Asin sabihon na magigin marhay man.
+
+Dai mo kuta ini dinarang solo.
+Kapatapat mo an agang matuninong.
+Buhay na an ngisi daing inulangan,
+Asin an pangarap talingkas maburak.
+
+Alagad pag naghihiling sa mata mo,
+Dai ko nahiling an sarong raot man.
+Sarong babaying kusog di niya aram,
+Nagpipiling laom maski na masakit.
+
+Kaya kun maaga masakit man diit,
+Boses ko sana an magin pahingalo.
+Dai itatago saimong kalag man;
+Aakuon kan puso ko an gabos man.
+
+Di maitangako mawara an bagyo.
+Dai ka matatahoban sa lugad man.
+Alagad dai taka babayaan man;
+Ini an panugang nasa sakong puso.
+
+Matindog sa taed maski harayo ka.
+Sa lambang pagbalo sa dalan tang ini.
+An rayo suhayon man sakuyang kamot,
+Alagad an pagkamoot makaabot.
+
+Kun an takot kinukua an ngisi mo,
+Tandaan na ako sarong apod sana.
+Madanay sagkod ginhawa mapataning,
+Gigirumdumon na igwa pang saldang man.
+
+Bantayan an pangarap garu sakuya.
+Kukusgan an lakdang na nagdadara man.
+An saimong panggana sakong orgulyo,
+Huli ta an aga mo mahalaga man.
+
+Pamibi kong puso mo makakua man,
+Nin buhay na saldang daing gabat baga.
+Harong na magin lugar kan kaogmahan,
+Asin an pagkamoot daing hadit man.
+
+Sagkod duman, pilion ko an kamot mo.
+Sa aga man, asin sa manga masunod.
+Bakong sa obligasyon, o taram sana,
+Kundi ta ako namomoot saimo.
+
+Kun namidbid taka sana kaidto pa...
+Dina ka nagluha nin kadakul baga.
+Maski huri na, an panuga ko yaon:
+Kakamuton taka sa satuyang taon.
+
+Sandal sakuya kun buhay magabaton.
+Sasarong lakdang satong aatubangon.
+Di na kaipuhan ipahiling kusog;
+Aalsahon ko an gabat na makaya.
+
+Namomotan, huri man ako saimo,
+Asin ako tibaad harayoon man.
+Alagad poon nagin saro an puso,
+Poprotektaran taka sa danay nanggad.`,
+    englishText: `Sometimes I wish we'd met much sooner, my love.
+Before the world had asked so much of you.
+Perhaps I'd bring one more reason to smile,
+One steady hand through every passing day.
+
+I'm sorry that I entered far too late.
+Your heart had carried burdens long before.
+I cannot change the pages left behind,
+But I can help you write the ones ahead.
+
+And I'm still sorry distance keeps us far.
+There are days I long to simply be there.
+To quietly sit beside your weary heart,
+And tell you everything will be alright.
+
+You never should have carried this alone.
+You deserved mornings filled with gentle peace.
+A life where smiles arrived without a fight,
+And every dream could freely learn to bloom.
+
+Yet every time I look into your eyes,
+I never see someone the world has broken.
+I see a woman stronger than she knows,
+Still choosing hope despite the hardest days.
+
+So when tomorrow feels a little hard,
+Please let my voice become your place of rest.
+You never have to hide your weary soul;
+My heart will always welcome every part.
+
+I cannot promise every storm will end.
+I cannot shield you from each wound ahead.
+But I will never leave you on your own;
+That is a promise written in my heart.
+
+I'll stand beside you whether near or far.
+Through every trial waiting down the road.
+The miles may keep my hands away today,
+But never keep my love from reaching you.
+
+Whenever fear begins to steal your smile,
+Remember I am always just one call.
+I'll stay until your breathing settles down,
+And remind you brighter days still remain.
+
+I'll guard your dreams as if they were my own.
+I'll cheer each step that carries you ahead.
+Your victories will always make me proud,
+Because your future matters just as much.
+.
+I pray one day your heart finds lasting peace.
+A life where every sunrise feels so light.
+Where home becomes a place of quiet joy,
+And love no longer needs to fear the day.
+
+Until that day, I'll keep choosing your hand.
+Again tomorrow, and the days beyond.
+Not out of duty, nor out of mere words,
+But because loving you is who I am.
+
+If only I had found you years before...
+Perhaps I'd spare you tears I cannot count.
+Though I was late, my promise still remains:
+I'll love you with the years that now are ours.
+
+So lean on me whenever life feels heavy.
+We'll face each season one small step at once.
+You never have to prove you're always strong;
+I'll gladly carry what I safely can.
+
+My love, I may have come into your life late,
+And I may still be many miles away.
+But from the day our hearts became as one,
+I'll do my best to keep you safe, always.`
   },
   {
     id: "7",

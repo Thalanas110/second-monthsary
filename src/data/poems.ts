@@ -16,6 +16,7 @@ export interface ArchiveEntry {
   transcript?: string;
   durationLabel?: string;
   voicemailStyle?: "standard" | "song";
+  voiceWarning?: string;
 }
 
 export type Poem = ArchiveEntry;
@@ -914,10 +915,11 @@ I wanna write you a song`
     type: "voicemail",
     title: "From Strangers to Us",
     englishTitle: "From Strangers to Us",
-    poet: "Adriaan M. Dimate | BSCS 4-A",
+    poet: "Adriaan M. Dimate | BSCS 4-A (original composition)",
     moods: ["Longing", "Joy"],
     year: "2026",
     voicemailStyle: "song",
+    voiceWarning: "Voice note: this audio was AI-generated with Suno because my vocal range made a recorded take difficult. I’ll redo it in the future; the lyrics are still mine.",
     text: `Verse 1 - The Introduction (May 6)
 
   A quiet message crossed my way,

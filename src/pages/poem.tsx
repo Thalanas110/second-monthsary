@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { dividerRevealEffect, fadeUpEffect, slideInEffect } from "@/components/services/effects";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useToast } from "@/hooks/use-toast";
+import { VoiceWarningDialog } from "@/components/voice-warning-dialog";
 import {
     getCopyText,
     getDisplayParagraphs,
@@ -20,6 +21,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
     const { toast } = useToast();
     const [copied, setCopied] = useState(false);
     const [selected, setSelected] = useState(false);
+    const [voiceWarningOpen, setVoiceWarningOpen] = useState(Boolean(poem?.voiceWarning));
     const [language, setLanguage] = useLanguage();
     const backButtonEffect = slideInEffect("left");
     const languageToggleEffect = slideInEffect("right");
@@ -29,6 +31,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "instant" });
+        setVoiceWarningOpen(Boolean(poem?.voiceWarning));
     }, [params.id]);
 
     if (!poem) {
@@ -73,6 +76,7 @@ export default function PoemPage({ params }: { params: { id: string } }) {
 
     return (
         <div className="min-h-[100dvh] w-full">
+            {poem.voiceWarning && <VoiceWarningDialog open={voiceWarningOpen} onOpenChange={setVoiceWarningOpen} message={poem.voiceWarning} />}
             <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 md:py-20">
                 <div className="flex items-center justify-between mb-12">
                     <motion.button

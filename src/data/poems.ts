@@ -453,7 +453,7 @@ Let every wave repeat one answer:
     title: "Kun an Rayo an Naghuhugas kan mga Pinggan",
     englishTitle: "When Distance Washes the Dishes",
     poet: "Adriaan M. Dimate | BSCS 4-A",
-    moods: ["Devotion", "Passion"],
+    moods: ["Devotion", "Longing"],
     year: "2026",
     text: `May mga banggi na pinagmamawot ko,
     Na sa saimo kamot ko makaabot;
@@ -1049,45 +1049,441 @@ I'll do my best to keep you safe, always.`
   },
   {
     id: "7",
-    type: "lsm",
-    title: "[Bikolano title for Love's Philosophy goes here]",
-    englishTitle: "Love's Philosophy",
+    type: "poem",
+    title: "Kan Saimong Lakdang Pasiring sa Aga",
+    englishTitle: "When You Walked Toward Tomorrow",
     poet: "Percy Bysshe Shelley",
-    moods: ["Passion", "Longing"],
+    moods: ["Devotion", "Longing", "Joy"],
     year: "1819",
-    text: `[Bikolano translation for Love's Philosophy goes here]`,
-    englishText: `The fountains mingle with the river
-   And the rivers with the ocean,
-The winds of heaven mix for ever
-   With a sweet emotion;
-Nothing in the world is single;
-   All things by a law divine
-In one spirit meet and mingle.
-   Why not I with thine?—
+    text: `Kasu banggi nangiturogan ako man,
+An kalangitan pinintahang bulawan.
+An simbahan nag-aabang sa liwanag,
+Asin kalangitan naghutik, "Uya na."
 
-See the mountains kiss high heaven
-   And the waves clasp one another;
-No sister-flower would be forgiven
-   If it disdained its brother;
-And the sunlight clasps the earth
-   And the moonbeams kiss the sea:
-What is all this sweet work worth
-   If thou kiss not me?`
+Sinalo kan bintana an bagong saldang,
+Kumbong an init sa kahoy na tukawan.
+An duros pano nin silensyong pamibi,
+Garu baga anghel nagginhawang tonong.
+
+Burak namukadkad nin silensyong gayon,
+Puting sampaguita nakakorona man.
+Lambang sadit na burak baga nagsabi,
+"Ngunyan na an poon nin pagkamoot ta."
+
+Tapos musika luhay-luhay na ngunob,
+Sarong awiton na malomhok, totoo.
+Mayong boses binaruso; mayong takot,
+Sagkod an silensyo nagin magayonon.
+
+Pinto nagbukas garu pagbutwang saldang,
+An liwanag sa likod mo bulawan man.
+Sa sarong hinangos kinaban nagpundo,
+Garu lalang mawot hilingon ngisi mo.
+
+Naglakdang ka nin saro, tapos saro pa,
+An belo sa duros aga minakuyog.
+Lambang lakdang sa puso ko naglalanog,
+Garu pangarap nakanood paghangos.
+
+An mata mo puros kaugmahan, luha,
+Bakong gikan sa mundong nakaagi na,
+Kundi sa paglaom na nagin totoo—
+Panugang naghahalat sa likod ngisi.
+
+Bado mo luhay na garu panganuron,
+Lambang sagbay may saldang haling itaas.
+Mayong alahas madaog sa nahiling,
+Kalinaw kan pusong patos pagkamoot.
+
+An manga kandila makirab sa dalan,
+Sadiit na laad laban sa duros man.
+Baga nag-uusipon nin satong puso:
+Naglalaad sagkod sa umaging taon.
+
+Hinihiling kong nawara an harayo,
+Kada lakdang nagin agang minarani.
+An dalan dai na baga halabaon,
+Baga sana ako mauli sa harong.
+
+An koro nag-awit nin boses na linaw,
+Tinogma pader baga hutik na laom.
+Bilog na simbahan nahingos sa himno,
+Baga naogma sa simbag na pamibi.
+
+Sa luwas, an aga naghahalat sana,
+Manga poon nagduko sa huyop duros.
+Maski man saldang uminuntok sa pinto,
+Habong palampason idtong kaugmahan.
+
+Inisip ko an manga dalang nagdara,
+Milyang inagihan ta sa pagtubod lang.
+Dai mabilang na pamibi sa banggi,
+Ngunyan namumurak para hilingon ta.
+
+Mayong ribok nin pag-aapura diyan,
+Dai na kaipuhan hidawon ini.
+An oras kaini garu daing sagkod,
+Balaog na andam bago pa nginaran.
+
+Kalmado kamot mo maski pano puso,
+Ngisi mo may darang rinibong pangarap.
+An sadit na aking nagmawot nin toltol,
+Yaon pa sa babaying nakatindog dyan.
+
+Sa imong manga mata mayong hadit man,
+Kundi sarong agang minabukas pinto.
+An gabat nin suodma luminain na,
+Kan paglaom naging tataramon puso.
+
+An kampana pinukaw bilog na duros,
+Maogmang awit naglakaw sa banwaan.
+Bakong garu batbat na kinaputan man,
+Kundi an langit nag-aawit sato man.
+
+Pangarap luminubad sa pag-aaga,
+Musika inanod luhay-luhay duros.
+Alagad gabos na kulay nag-iwalat,
+Garu manga panugang di babayaan.
+
+Nagimata ako bago pa natapos,
+Simbahan nawara sa pagbutwang saldang.
+Alagad sarong gayon dai nahali:
+Saimong paglakdang pasiring sa aga.
+
+Kun an pangarap na ini naging buhay,
+Mabalos sa Diyos nadangog an pamibi.
+Ta bago satuyang inabot an dalan,
+Nagsurat Siya lakdang sa namomotan.`,
+    englishText: `Last night I dreamed a quiet Sunday dawn.
+The skies were brushed with gentle shades of gold.
+The church stood waiting in the morning light,
+As heaven softly whispered, "She has come."
+
+The windows caught the rising morning sun,
+Its warmth embracing every wooden pew.
+The air was filled with calm and silent prayers,
+Like angels breathing peace into the room.
+
+The flowers bloomed with simple, quiet grace.
+White sampaguitas crowned the waiting aisle.
+Each little blossom seemed to gently say,
+"Today begins a lifetime built on love."
+
+Then all at once the music slowly rose.
+A melody both gentle and sincere.
+No voice was hurried; no heart raced with fear.
+Even the silence sounded beautiful.
+
+The doors unfolded like the break of dawn.
+The light behind you painted you in gold.
+For just a breath the whole world stood so still,
+As though creation wished to watch you smile.
+
+You took one step, then slowly took one more.
+The veil beneath the morning breeze would sway.
+Each careful footstep echoed through my heart,
+Like every dream had learned to breathe at last.
+
+Your eyes were bright with quiet, joyful tears.
+Not born from sorrow, nor from yesterday.
+But from the hope that finally became
+A promise waiting just beyond your smile.
+
+Your dress flowed softly like the morning clouds.
+Each thread reflected sunlight from above.
+No crown of jewels could outshine what I saw—
+A peaceful heart completely wrapped in love.
+
+The candles flickered gently by the aisle.
+Their little flames refused to yield to wind.
+They seemed to tell the story of our hearts:
+Still burning softly through the passing years.
+
+I watched the distance slowly disappear.
+Each step became tomorrow drawing near.
+The aisle no longer felt so long to cross;
+It simply felt like coming safely home.
+
+The choir sang with voices warm and clear.
+The walls returned each note like whispered hope.
+The whole church seemed to breathe with every hymn,
+As if rejoicing with our answered prayers.
+
+Outside, the morning waited patiently.
+The trees bowed gently underneath the breeze.
+Even the sunlight lingered at the doors,
+Unwilling yet to miss your quiet joy.
+
+I thought about the roads that brought us here.
+The miles we crossed with nothing else but faith.
+The countless prayers that traveled through the night,
+Now blooming into something we could see.
+
+There was no sound of rushing anywhere.
+No need to hurry what was always meant.
+The moment felt as timeless as the dawn,
+A gift prepared before our names were known.
+
+Your hands were calm although your heart was full.
+Your smile carried a thousand silent dreams.
+The little girl who wished for gentler days
+Still lived within the woman standing there.
+
+And in your eyes I saw no trace of fear.
+Only a future opening its doors.
+The weight of yesterday grew strangely small,
+As hope became the language of your heart.
+
+The bells awakened all the morning air.
+Their joyful echoes wandered through the town.
+They sounded less like metal touched by hands,
+And more like heaven singing back to us.
+
+The dream began to fade with morning light.
+The music slowly drifted with the wind.
+Yet somehow every color stayed with me,
+Like promises too beautiful to lose.
+
+I woke before the ending could arrive.
+The church had vanished with the breaking dawn.
+But one sweet picture never left my heart—
+You walking gently toward tomorrow's light.
+
+And if one day this dream should come to life,
+I'll thank the Lord who heard our quiet prayers.
+For long before we reached that sacred aisle,
+He first was writing every step with love.`
   },
   {
     id: "8",
     type: "lsm",
-    title: "[Bikolano title for A Glimpse goes here]",
-    englishTitle: "A Glimpse",
+    title: "Sarong Mensahe",
+    englishTitle: "A message",
     poet: "Walt Whitman",
-    moods: ["Joy", "Reflection"],
+    moods: ["Devotion", "Joy", "Reflection"],
     year: "1860",
-    text: `[Bikolano translation for A Glimpse goes here]`,
-    englishText: `A glimpse through an interstice caught,
-Of a crowd of workmen and drivers in a bar-room around the stove late of a winter night, and I unremark'd seated in a corner,
-Of a youth who loves me and whom I love, silently approaching and seating himself near, that he may hold me by the hand,
-A long while amid the noises of coming and going, of drinking and oath and smutty jest,
-There we two, content, happy in being together, speaking little, perhaps not a word.`
+    text: `Namomotan kong madame,
+
+Maugmang ikaduwang monthsary, sakuyang madame. ❤️
+
+An duwang bulan tibaad halipot sana para sa iba, alagad para sakuya, sa duwang bulan na ini nangyari an pirang pinakamakabuluhan na aldaw kan sakong buhay. Kada aga na minamata ako na aram kong yaon ka sa buhay ko, garo baga saro na naman na sinimbag na pamibi. An lambang mensahe, lambang ngisi, lambang sadit na "padangat taka," lambang puyat na urulay, lambang simpleng update manungod sa aldaw mo—luhay-luhay ining nagin parte kan sakuyang pang-aroaldaw na kaugmahan.
+
+Kun may maghapot sakuya kun ano an nagbago sa nakaaging duwang bulan, ini lang an sasabihon ko:
+
+Nahanap ko idtong tawo na maninigo kong ibahan sa paggibo kan sakuyang aga.
+
+Nagin urog ka pa sa sarong nobya para sakuya. Ika an nagin best friend ko, sakuyang ligtas na pailihan, paboritong kunsultahan nin magayagayang bareta, enot na naiisip sa gabos na nangyayari, asin an tawong ipinapamibi ko bago magturog.
+
+Aram ko na dai nagin malumoy an buhay saimo.
+
+Aram kong may mga aldaw na garo baga kun isay pa an mga dapat minatabang saimo na umuswag, iyo pa an nagpapasakit kan saimong inaagihan. May mga oras na an saimong mga pangarap, saimong pagklase, asin maski an talingkas mong pag-uswag, garo napupugulan nin mga sirkumstansyang dai mo man pinili. An paghiling kaini hali sa harayo nakakakulog, ta aram ko kun gano kadakula an potensyal mo.
+
+Alagad nakikiulay ako, dai mo nanggad pagtugutan an mga oras na iyan na papaniwalon ka na an aga mo tapos na.
+
+Bakong totoo iyan.
+
+Nahiling ko an saimong kabuotan. Nahiling ko an saimong pasensya. Nahiling ko kun gano ka nagmamakulog sa mga tawo sa palibot mo. Nahiling ko kun pano ka padagos na namomoot, maski sa mga masakit na aldaw. Bako iyan tanda nin kaluyahan—iyan mga tanda nin pambihirang kusog.
+
+Minsan minamawot ko na namidbid taka kuta kaidtong mga nakaaging taon.
+
+Bako huli ta gusto kong baguhon kun isay ka ngunyan, kundi huli ta mawot kong yaon ako duman para ipagirumdom saimo, nin mas amay, na ika pirming sapat na. Mawot kong nagin saro ako sa mga boses na nagsasabi saimong padagos na magtubod sa saimong sadiri.
+
+Asin minsan minamawot ko na an rayo kan Olongapo sa Legazpi mayo sana kuta.
+
+May mga aldaw na an mawot ko lang iyo na makaiba ka—an idul-ong ka sa eskwelahan, ipag-ugma an saimong mga kapangganahan nin atubangan, kaputan an saimong kamot pag napapagal ka na, ipamibi ka nin magkaatubang, asin ipagirumdom saimo na an gabos magigin ayos lang.
+
+Sa ngunyan, dai ako pirming yaon duman sa pisikal.
+
+Alagad lugod namamatean mo na nungka taka man talagang binayaan sa saimong kataed.
+
+Lambang mensaheng pinapadara ko, may darang kapidaso kan puso ko. Lambang pamibing hinuhutik ko, kaiba an saimong ngaran. Lambang planong ginigibo ko para sa aga, silensyong kaiba ka. Lambang pangarap na inaabot ko, bako na sana para sakuya—kundi para sa sato.
+
+Sarong aldaw, mawot kong hilingon ta an mga masakit na kabanata na ini na may ngisi, bako huli ta nagin madali iyan, kundi huli ta dai kita nadaog kaiyan.
+
+Pinapangaturugan ko an mga agang mamamata kita sa irarom kan sarong atop.
+
+Pinapangaturugan kong magpuli pagkatapos nin trabaho asin madangog an boses mo imbes na maghalat nin notification.
+
+Pinapangaturugan kong iselebrar an satong mga panggana na magkaibahan, rangaon an lambang saro sa oras nin kapalpakan, magluto na magkaiba, magngisi sa pinakasadit na bagay, maglingkod sa Diyos nin magkaibahan, asin maggurang na magkaibahan.
+
+Pinapangaturugan kong mahiling ka na nakakamit an lambang pangarap na sinabi mo sakuya.
+
+Pinapangaturugan kong mahiling ka na nabubuhay nin talingkas asin dai na pirming may hinahaditan.
+
+Pinapangaturugan kong mahiling kang ngumingisi huli ta ika tunay nang matuninong.
+
+An mga pangarap na iyan bakong ilusyon sana para sakuya.
+
+Mga panuga iyan na andam kong pagtrabahuhan laog nin nagkapirang taon.
+
+Mabalos ta ipinagkatiwala mo sakuya an saimong puso.
+
+Mabalos ta pinipili mo ako aroaldaw.
+
+Mabalos sa pagtubod sa sato, maski kun an buhay nagigin komplikado.
+
+Mabalos sa pagpapagirumdom sakuya kun ano man nanggad an pagkamoot—bakong perpekto, kundi an pagpili sa lambang saro sa gabos na panahon.
+
+May gusto man akong maaraman mo.
+
+Dai mo nungka kaipuhan na magin "mas hababa" para sana magin komportable an ibang tawo.
+
+Padagos mag-adal.
+
+Padagos mangarap.
+
+Padagos mag-uswag.
+
+Padagos na magin an pambihirang babayi na linalang nin Diyos saimo.
+
+Maski isay man an magduda saimo, maski isay man an pumugol saimo, asin maski gano kasakit an sitwasyon ngunyan, padagos akong matubod sa agang naghahalat saimo.
+
+Ipag-oogma ko an lambang lakdang mo.
+
+Mapalakpak ako sa lambang naabot mo.
+
+Rarangahon taka sa lambang pagkadapa mo.
+
+Padagos takang ipapamibi.
+
+Padagos takang susuportaran.
+
+Asin padagos takang padadangaton.
+
+Bako lang sa mga pasil na aldaw.
+
+Bako lang kun an gabos uyon sa plano.
+
+Kundi urog na sa mga aldaw na kaipuhan mo nin tawong mapagirumdom saimo na ika mas makusog pa sa inaakala mo.
+
+Namomotan ko, mabalos sa pagtao sakuya kan magayon na duwang bulan na ini.
+
+Aram kong halaba pa an babagtason ta. Igwa nin mga pagbalo, rayo, obligasyon, asin mga oras na mas dakul an hinahagad kan buhay kisa sa gusto ta.
+
+Alagad kun may sarong bagay man na naitukdo sakuya kan nakaaging duwang bulan, iyo ini:
+
+Habo kong bagtason an dalan na iyan kaiba an iba.
+
+Maugmang ikaduwang monthsary, sakuyang magayon asin makangangalas na madame.
+
+Mabalos ta ika an sakong sinimbag na pamibi, sakong pinakadakulang biyaya, asin an babaying lalaoman kong pilion aroaldaw sa dakul pang taon na maabot.
+
+Padangat taka urog pa kasuodma, asin padagos akong mahanap nin bagong rason para padangaton ka sa aga.
+
+Daing sagkod saimo,
+
+An saimong baby Adriaan. ❤️`,
+    englishText: `My dearest madame,
+
+Happy Second Monthsary, my madame. ❤️
+
+Two months may seem small to everyone else, but to me, these two months have held some of the most meaningful days of my life. Every morning I wake up knowing you're in my life feels like another answered prayer. Every message, every laugh, every little "I love you," every late-night conversation, every random update about your day—they've quietly become part of my everyday happiness.
+
+If someone asked me what changed these past two months, I'd simply say this:
+
+I found someone worth building my future with.
+
+You've become more than just my girlfriend. You've become my best friend, my safe place, my favorite person to tell good news to, my first thought whenever something happens, and the person I pray for before I sleep.
+
+I know life hasn't been gentle with you.
+
+I know there are days when it feels like the very people who should be helping you move forward instead make the road steeper. There are moments when your dreams, your education, and even your freedom to simply grow seem to be held back by circumstances you never chose. Watching that from afar hurts, because I know how much potential you have.
+
+But please don't ever let those moments convince you that your future has been decided.
+
+It hasn't.
+
+I have seen your kindness. I have seen your patience. I have seen how deeply you care for the people around you. I have seen how you continue to love, even after difficult days. Those are not signs of weakness—they are signs of remarkable strength.
+
+Sometimes I wish I had met you years earlier.
+
+Not because I would change who you are today, but because I wish I could have been there to remind you, much sooner, that you have always been enough. I wish I could have been another voice telling you to keep believing in yourself.
+
+And sometimes I wish the distance between Olongapo and Legazpi simply didn't exist.
+
+There are days when all I want is to be beside you—to walk you to school, to celebrate your victories in person, to hold your hand when you're overwhelmed, to pray with you face to face, and to remind you that everything will be okay.
+
+For now, I can't always be physically there.
+
+But I hope you've felt that I've never truly left your side.
+
+Every message I send carries a piece of my heart. Every prayer I whisper includes your name. Every plan I make for the future quietly includes you. Every goal I chase isn't just for me anymore—it's for us.
+
+One day, I want us to look back at these difficult chapters and smile, not because they were easy, but because they didn't defeat us.
+
+I dream of the mornings we'll wake up under the same roof.
+
+I dream of coming home after work and hearing your voice instead of waiting for a notification.
+
+I dream of celebrating our victories together, comforting one another through setbacks, cooking together, laughing over the smallest things, serving God together, and growing old together.
+
+I dream of watching you achieve every goal you've told me about.
+
+I dream of seeing you finally live without constantly looking over your shoulder.
+
+I dream of seeing you smile because you're genuinely at peace.
+
+Those dreams aren't just fantasies to me.
+
+They're promises I'm willing to spend years working toward.
+
+Thank you for trusting me with your heart.
+
+Thank you for choosing me every single day.
+
+Thank you for believing in us, even when life becomes complicated.
+
+Thank you for reminding me what love actually looks like—not perfection, but choosing one another through every season.
+
+I also want you to know something.
+
+You never have to become "less" just to make other people comfortable.
+
+Keep learning.
+
+Keep dreaming.
+
+Keep growing.
+
+Keep becoming the incredible woman God created you to be.
+
+No matter who doubts you, no matter who tries to limit you, and no matter how difficult today's circumstances feel, I'll keep believing in the future that waits for you.
+
+I'll celebrate every step you take.
+
+I'll cheer for every achievement.
+
+I'll comfort you through every setback.
+
+I'll keep praying for you.
+
+I'll keep supporting you.
+
+And I'll keep loving you.
+
+Not only during the easy days.
+
+Not only when everything is going according to plan.
+
+But especially on the days when you need someone to remind you that you're stronger than you think.
+
+My love, thank you for giving me these wonderful two months.
+
+I know we've still got a long road ahead of us. There will be challenges, distance, responsibilities, and moments when life asks more from us than we'd like.
+
+But if there's one thing these past two months have taught me, it's this:
+
+I don't want to walk that road with anyone else.
+
+Happy Second Monthsary, my beautiful and gorgeous madame.
+
+Thank you for being my answered prayer, my greatest blessing, and the woman I hope to keep choosing every single day for many years to come.
+
+I love you more than yesterday, and I'll keep finding new reasons to love you tomorrow.
+
+Forever yours,
+
+Your baby Adriaan. ❤️`
   },
   {
     id: "9",
@@ -1188,7 +1584,7 @@ I wanna write you a song`
     title: "From Strangers to Us",
     englishTitle: "From Strangers to Us",
     poet: "Adriaan M. Dimate | BSCS 4-A (original composition)",
-    moods: ["Longing", "Joy"],
+    moods: ["Devotion", "Longing", "Joy"],
     year: "2026",
     voicemailStyle: "song",
     voiceWarning: "Voice note: this audio was AI-generated with Suno because my vocal range made a recorded take difficult. I’ll redo it in the future; the lyrics are still mine.",

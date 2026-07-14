@@ -578,32 +578,159 @@ We'll live our quiet ever after—together.`
   {
     id: "4",
     type: "poem",
-    title: "[Bikolano title for She Walks in Beauty goes here]",
-    englishTitle: "She Walks in Beauty",
-    poet: "Lord Byron",
+    title: "Kun Katuninungan May Pagkatakig Pa",
+    englishTitle: "When Peace Still Trembles",
+    poet: "Adriaan M. Dimate | BSCS 4-A",
     moods: ["Devotion", "Reflection"],
-    year: "1815",
-    text: `[Bikolano translation for She Walks in Beauty goes here]`,
-    englishText: `She walks in beauty, like the night
-Of cloudless climes and starry skies;
-And all that's best of dark and bright
-Meet in her aspect and her eyes;
-Thus mellowed to that tender light
-Which heaven to gaudy day denies.
+    year: "2026",
+    text: `An kalangitan ngunyan matuninungon,
+Alagad may bagyong nagtotok sa porta.
+Katuninungan na maluya sa aldaw,
+Alagad an hadit dai napapawi.
 
-One shade the more, one ray the less,
-Had half impaired the nameless grace
-Which waves in every raven tress,
-Or softly lightens o'er her face;
-Where thoughts serenely sweet express,
-How pure, how dear their dwelling-place.
+Kada aga may paglaom na mag-adal,
+Abuton an manga mawot kan boot mo.
+Alagad lambang lakdang pinapapundo,
+Garu baga bawal kang maglayag ngunyan.
 
-And on that cheek, and o'er that brow,
-So soft, so calm, yet eloquent,
-The smiles that win, the tints that glow,
-But tell of days in goodness spent,
-A mind at peace with all below,
-A heart whose love is innocent!`
+Aram ko an gabat na nasa daghan mo,
+Manga silensyong hadit na daing untok.
+An pagmawot na maglakaw sa iskwela,
+Mantang may kadenang dai mo nahiling.
+
+Dai dapat makimaherak an aki,
+O mag-isip kun papayagan sa aga.
+Sa kulog na yaon diyan sa mata mo,
+An imong kusog padagos na mabutwa.
+
+Maski an manga aldaw di sigurado,
+Mayong pader na makakulong sa isip.
+An imong mawot mas lawas pa sa iba,
+Nasusurat kun sain dai pundohon.
+
+Kun an simbag garu baga bako ngunyan,
+Asin an paglaom baga kinukua.
+Tandaan mo na may sarong nagtutubod,
+Sa maabot na nasa manga kamot mo.
+
+Dai ko makua an ralaban diyan,
+O patuninungon an manga bagyo man.
+Alagad maiibahan taka sa uran,
+Sagkod na hanapon kan saldang an ngisi.
+
+Kun an luha tuminulo sa madiklom,
+Dai mo dapat itago an luha mo.
+An nagkukulog mong puso dai solo,
+Dadarahon ta iyan maski magabat.
+
+An dalan masakit, saka an pagsakat,
+Alagad nagkusog an gamot sa sirong.
+Maski an pinakahalangkaw na poon,
+Nagtindog sa manga bagyong umaagi.
+
+Ipinapamibi kong gabos na trangka,
+Mabuksan man sa tamang panahon nanggad.
+Asin pag-abot kan aldaw na sinabi,
+Mangingisi kita sa kusog tang ini.
+
+An libro naghahalat lang pasensyoso,
+Nin mas maliwanag na pahinang bago.
+Dai makakansela kan sarong pundo,
+Magayon padagos an saimong kwento.
+
+Kun saimong isip pinaparibok man,
+Girumdumon dai ka magbabago man.
+An liwanag kan puso mo nawalat na,
+Nagliliwanag pa sa agi kan bagyo.
+
+Kun bayaan ka kan kinaban magtindog,
+Ako an mataram na kaya mo ini.
+Sarong lakdang asin saro pang paglakaw,
+Sagkod na abuton mo an imong mawot.
+
+Maski sain dadarahon ka kan aga,
+O gurano kalibog man kan aagyan.
+Yaon sana ako iyo sa taed mo,
+Tanganing itaas ka kun matutumba.
+
+Pakusugon an puso namomotan ko,
+Mayong bagyo makakua kan biyaya.
+Sagkod na an saimong gabat mapara,
+Ako padagos saimo maiiba.`,
+    englishText: `The skies are quiet, softer than before,
+Yet hidden storms still knock upon your door.
+A fragile peace now wraps the passing days,
+But worry lingers through familiar ways.
+
+Each morning holds a hope to simply learn,
+To chase the dreams your faithful heart has earned.
+Yet every step is questioned, held too tight,
+As if your wings should never seek their flight.
+
+I know the burden resting on your chest,
+The silent fears that never seem to rest.
+The longing just to walk the schoolyard halls,
+While unseen chains answer every call.
+
+No child should have to beg to learn and grow,
+Or wonder if tomorrow they'll be allowed to go.
+Still through the ache that fills your weary eyes,
+Your quiet strength continues to arise.
+
+Though days may feel uncertain and confined,
+No prison walls can ever cage your mind.
+Your dreams were born beyond another's hand;
+They're written where no force can make them stand.
+
+When every answer feels like "not today,"
+And hope itself seems slowly pulled away,
+Remember there is one who still believes
+In every future resting up your sleeves.
+
+I cannot steal the battles from your path,
+Nor silence every storm with gentle hands.
+But I can walk beside you through the rain,
+Until the sunlight finds your smile again.
+
+Should tears arrive when no one else can see,
+You never have to hide those tears from me.
+Your hurting heart is never yours alone;
+We'll carry every burden, stone by stone.
+
+The road is rough, the climb is often steep,
+Yet stronger roots are growing underneath.
+Even the tallest trees were once so small,
+Standing through tempests that refused to fall.
+
+I pray that every closed and heavy gate
+Will someday open at the proper date.
+And when that morning finally appears,
+We'll smile at all the strength built through these years.
+
+Your books still wait with patience in their pages,
+For brighter chapters written through the ages.
+No pause can ever cancel who you'll be;
+Your story still unfolds beautifully.
+
+Whenever doubt begins to cloud your view,
+Remember this will never alter you.
+The light within your heart remains the same,
+Still shining softly through the wind and rain.
+
+If all the world should leave you standing still,
+I'll be the voice reminding you, "You will."
+One careful step, then one again we'll take,
+Until your dreams are yours at last to make.
+
+No matter where tomorrow leads your feet,
+Or how uncertain every path may seem,
+My place remains beside you through it all—
+To lift you every time you fear you'll fall.
+
+So keep your heart, my love, forever brave;
+No storm can steal the future Heaven gave.
+Until the day your burdens fade from view,
+I'll keep believing—and I'll walk with you.`
   },
   {
     id: "5",

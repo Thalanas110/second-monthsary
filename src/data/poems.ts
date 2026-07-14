@@ -908,7 +908,7 @@ I wanna write you a song
 I wanna write you a song`
 ,
     audioSrc: "/audio/i want to write you a song cr var.mp3",
-    durationLabel: "3:01",
+    durationLabel: "2:51",
   },
   {
     id: "10",

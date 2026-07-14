@@ -736,26 +736,159 @@ I'll keep believing—and I'll walk with you.`
   {
     id: "5",
     type: "poem",
-    title: "[Bikolano title for Bright Star goes here]",
-    englishTitle: "Bright Star",
+    title: "Sarong Pangarap, Sarong Harong",
+    englishTitle: "One Dream, One Home",
     poet: "John Keats",
     moods: ["Longing", "Devotion"],
     year: "1819",
-    text: `[Bikolano translation for Bright Star goes here]`,
-    englishText: `Bright star, would I were stedfast as thou art—
-Not in lone splendour hung aloft the night
-And watching, with eternal lids apart,
-Like nature's patient, sleepless Eremite,
-The moving waters at their priestlike task
-Of pure ablution round earth's human shores,
-Or gazing on the new soft-fallen mask
-Of snow upon the mountains and the moors—
-No—yet still stedfast, still unchangeable,
-Pillow'd upon my fair love's ripening breast,
-To feel for ever its soft fall and swell,
-Awake for ever in a sweet unrest,
-Still, still to hear her tender-taken breath,
-And so live ever—or else swoon to death.`
+    text: `Ako nangangarap lagpas sa aldaw ta,
+Lagpas sa dalan na tatangkaon ta pa.
+Bako an yaman o koronang hihiling,
+Kundi an paggibo nin aga tang duwa.
+
+Manga agang matuninung an liwanag,
+Kun sain an ngisi pupukawon aga.
+Sarong sadiit na harong tang ginibo,
+Pagkamoot nguna bago an ladrilyo.
+
+Abuton an satong mawot nin makusog,
+Sa manga banggi nin puyat asin plano.
+Bakong makihadal sa pilak na ngaran,
+Kundi nagkukusog sa lambang aga man.
+
+Susuraton ining kodigong may onra,
+Pipintahan mo imong aga sa arte.
+Maski ibang dalan an pilion ta man,
+Idadara ako padagos sa imo.
+
+Kun umabot an panggana dawa diit,
+Maoogma kita sa gabos na iyan.
+Ta lambang bukid na sakaton nin saro,
+Magiging panggana kan satong buhay man.
+
+Kun saro satuya matumba sa dalan,
+An saro dai basta basta mahali.
+Matao nin kusog sagkod na mauma,
+Iyan an gigibuhon nin pagkamoot.
+
+Manga banggi pagkatapos nin trabaho,
+Kun an ribok kan siyudad nawawara.
+Matukaw kita nin pasasalamat man,
+Makukua katuninungan sa taram.
+
+Siguro an estante ta mapapano,
+Nin manga retrato na di mahahabon.
+Lambang saro ipapagirumdom baga,
+Haling pangarap sagkod sa satong harong.
+
+Padagos kitang mag-adal sa paggurang,
+Hanapon dunong asin katotoohan.
+An panggana bako sanang satong kita,
+Kundi an manga buhay na inaalsa.
+
+Nangangarap kong ngisi mo daing gabat,
+Sa manga agang tinung daing paghadit.
+An pagal mong puso makaginhawa man,
+Aram na an aga mag-aako imo.
+
+Matindog kita sa manga bagyong abot,
+Bakong duwang estranhero naghahalat.
+Kundi magkataed bungkos an kusog ta,
+Makusog na laom di mabubuwatag.
+
+Manga mawot ta ngunyan pwede mabago,
+Pag-agi nin init asin manga bagyo.
+Alagad sarong mawot dai masuhay,
+Tangonan an lambang saro dyan sa puso.
+
+Sa ilang taon satong hihilingon man,
+An dakol na pamibi sa satong aga.
+An luhang tunuro lakdang sa pagtubod,
+Naghahanda kita nin urog na aga.
+
+Kaya mangarap kitang may paglaom man,
+Asin magtubod sa nagsusurat sato.
+Ta lambang biyaya naghahalat diyan,
+Mas importante ta nagtabangan kita.
+
+Sagkod umabot an urog na pangarap,
+An pilion kong aga yaon saimo.
+Bako lang panggana o manga sadiri,
+Kundi maggurang nag-iiba sa harong.`,
+    englishText: `I often dream beyond the days we know,
+Beyond the roads we're only starting to go.
+Not riches first, nor crowns for all to see—
+But building every tomorrow, you and me.
+
+I dream of mornings filled with quiet light,
+Where laughter gently wakes the dawn so bright.
+A little home we've patiently designed,
+Built first with love before the bricks align.
+
+We'll chase our callings with determined hands,
+Through sleepless nights and carefully laid plans.
+Not racing others for a fleeting name,
+But growing stronger with each passing day.
+
+I'll write my code with purpose in my heart,
+You'll paint your future through your chosen art.
+Though different roads may shape the work we do,
+They'll always lead me safely back to you.
+
+When victories arrive, both great and small,
+We'll celebrate together through them all.
+For every mountain either one may climb
+Becomes a triumph shared across our lives.
+
+And if one stumbles somewhere on the way,
+The other will not simply walk away.
+We'll lend our strength until the wounds grow few,
+For that's what hearts in faithful love will do.
+
+I dream of evenings after honest work,
+When all the city's noise begins to blur.
+We'll sit together, grateful for the day,
+Finding our peace in simple words we say.
+
+Perhaps our shelves will slowly start to fill
+With photographs that time can never steal.
+Each one reminding us how far we've come,
+From distant dreams into a place called home.
+
+We'll keep on learning long beyond our youth,
+Still chasing wisdom, kindness, grace, and truth.
+Success will never simply mean our gain,
+But lives we've lifted through our joy and pain.
+
+I dream you'll smile without the weight you bear,
+With quiet mornings free from every fear.
+Your weary heart at last can breathe anew,
+Knowing tomorrow welcomes only you.
+
+We'll stand before the storms that life may send,
+Not as two strangers hoping they'll soon end,
+But side by side, our courage intertwined,
+With steadfast hope no hardship can unwind.
+
+The goals we write today may change their form,
+As seasons pass through sunshine and through storms.
+Yet one desire will never drift apart:
+To keep each other safely in our hearts.
+
+Years from now we'll look behind and see
+The countless prayers that shaped our destiny.
+The tears we cried, the miles we walked in faith,
+Were all preparing brighter yesterdays.
+
+So let us dream with patient, hopeful eyes,
+And trust the Author writing both our lives.
+For every blessing waiting down the road
+Will mean far more because we shared the load.
+
+Until that day our greatest dreams come true,
+My favorite future still begins with you.
+Not just success, nor all that we may own—
+But growing old, together, finally home.`
   },
   {
     id: "6",
